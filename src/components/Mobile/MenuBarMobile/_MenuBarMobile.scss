@@ -1,0 +1,27 @@
+
+.mobile_menu{
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-evenly;
+    border-top: solid 1px #E0E4EA;
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.06);
+}
+.mobile_menu button{
+    border: none;
+    width: 20%;
+    border-radius: 4px;
+    padding: 3px 0px;
+}
+.mobile_menu button p{
+    display: none;
+}
+.mobile_menu > :first-child{
+        background-color: #EBF1FF;
+        //#335CFF
+}
+
+
+
+body.dark .mobile_menu button{
+    color: #99A0AE
+}

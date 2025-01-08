@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900; /* Defines the weight range the variable font supports */
+  font-style: normal; /* For the normal upright font */
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900; /* Same weight range for italic */
+  font-style: italic; /* For the italic font */
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("../src/assets/fonts/noto-serif/NotoSerif-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("../src/assets/fonts/noto-serif/NotoSerif-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("../src/assets/fonts/source-code-pro/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("../src/assets/fonts/source-code-pro/SourceCodePro-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #FFFFFF;
+  color: #0E121B;
+}
+
+button {
+  background: none;
+}
+
+body.Inter {
+  font-family: "Inter", sans-serif;
+}
+
+body.Noto {
+  font-family: "NotoSerif", sans-serif;
+}
+
+body.SourceCode {
+  font-family: "SourceCodePro", sans-serif;
+}
+
+body.light {
+  background: #FFFFFF;
+  color: #0E121B;
+}
+
+body.dark {
+  background: #0E121B;
+  color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
