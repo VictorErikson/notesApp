@@ -1,3 +1,5 @@
+@import 'variables';
+
 body.Inter{
     font-family: 'Inter', sans-serif;
 }
@@ -11,11 +13,11 @@ body.SourceCode{
 
 
 body.light {
-    background: #FFFFFF;
-    color: #0E121B;
+    background: $Neutral0;
+    color: $Neutral950;
 }
 
 body.dark {
-    background: #0E121B;
-    color: #FFFFFF;
+    background: $Neutral950;
+    color: $Neutral0;
 }

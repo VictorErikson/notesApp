@@ -1,10 +1,11 @@
+@import '../../../../partials/variables';
 
 .mobile_menu{
     display: flex;
     padding: 12px 16px;
     justify-content: space-evenly;
-    border-top: solid 1px #E0E4EA;
-    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.06);
+    border-top: solid 1px $Neutral200;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.06);
 }
 .mobile_menu button{
     border: none;
@@ -16,12 +17,12 @@
     display: none;
 }
 .mobile_menu > :first-child{
-        background-color: #EBF1FF;
+        background-color: $Blue50;
         //#335CFF
 }
 
 
 
 body.dark .mobile_menu button{
-    color: #99A0AE
+    color: $Neutral400;
 }

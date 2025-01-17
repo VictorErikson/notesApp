@@ -5,3 +5,43 @@
     @content;
    }
   }
+
+
+//Text Styles
+
+@mixin text-preset1 {
+   font-size: 24px;
+   font-weight: 700;
+   letter-spacing: -0.5px;
+   line-height: 120%;
+ }
+@mixin text-preset2 {
+   font-size: 20px;
+   font-weight: 700;
+   letter-spacing: -0.3px;
+   line-height: 120%;
+ }
+@mixin text-preset3 {
+   font-size: 16px;
+   font-weight: 600;
+   letter-spacing: -0.3px;
+   line-height: 120%;
+ }
+@mixin text-preset4 {
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: -0.2px;
+   line-height: 120%;
+ }
+@mixin text-preset5 {
+   font-size: 14px;
+   font-weight: 400;
+   letter-spacing: -0.2px;
+   line-height: 130%;
+ }
+@mixin text-preset6 {
+   font-size: 12px;
+   font-weight: 400;
+   letter-spacing: -0.2px;
+   line-height: 120%;
+ }
