@@ -1,34 +1,17 @@
 import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import ChangeModeBtn from "../../components/ChangeModeBtn/ChangeModeBtn";
+import AllNotesMobile from "../../components/allNotes/AllNotesMobile";
 
 const HomeTabletMobile = () => {
   return (
-    <>
+    <main className="mainHomeTablet">
       <PageHeaderMobile />
+      <AllNotesMobile />
       <MenuBarMobile />
       <ChangeModeBtn />
-    </>
+    </main>
   );
 };
 
 export default HomeTabletMobile;
-
-// All Notes
-// Archived Notes
-// Tags
-
-// <!-- Page title -->
-
-// Search by title, content, or tags
-
-// Create New Note
-
-// Tags
-// Last Edited
-
-// Archive Note
-// Delete Note
-
-// Save Note
-// Cancel

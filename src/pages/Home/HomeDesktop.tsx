@@ -1,30 +1,18 @@
 import PageDesktopHeader from "../../components/pageHeader/PageDesktopHeader";
+import Sidebar from "../../components/SettingsMenu/SettingsMenu";
+import ChangeModeBtn from "../../components/ChangeModeBtn/ChangeModeBtn";
+import "./_home.scss";
 
 const HomeDesktop = () => {
   return (
     <>
-      <PageDesktopHeader />
+      <main className="home">
+        <Sidebar />
+        <PageDesktopHeader page={"All Notes"} />
+      </main>
+      <ChangeModeBtn />
     </>
   );
 };
 
 export default HomeDesktop;
-
-// All Notes
-// Archived Notes
-// Tags
-
-// <!-- Page title -->
-
-// Search by title, content, or tags
-
-// Create New Note
-
-// Tags
-// Last Edited
-
-// Archive Note
-// Delete Note
-
-// Save Note
-// Cancel

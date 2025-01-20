@@ -35,6 +35,8 @@
   font-style: italic;
 }
 :root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
   --Neutral0: #FFFFFF;
   --Neutral50: #F5F7FA;
   --Neutral100: #F3F5F8;
@@ -71,9 +73,12 @@ body {
 
 button {
   background: none;
+  border: none;
 }
 
 :root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
   --Neutral0: #FFFFFF;
   --Neutral50: #F5F7FA;
   --Neutral100: #F3F5F8;

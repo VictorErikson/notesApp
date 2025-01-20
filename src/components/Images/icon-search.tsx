@@ -19,6 +19,7 @@ type IconProps = {
 const IconSearch: React.FC<IconProps> = ({ color = "#FF0000", size = 20 }) => {
   return (
     <svg
+      className="IconSearch"
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}

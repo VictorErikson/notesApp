@@ -1,4 +1,35 @@
-# React + TypeScript + Vite
+Setting up /Installing on new computer
+
+1. Install Dependencies
+   Make sure you have the necessary software installed:
+
+Node.js (Download from nodejs.org)
+Check if Node.js is installed:
+node -v
+
+Install or update Node.js if needed.
+npm or pnpm/yarn (comes with Node.js)
+
+Check npm version:
+npm -v
+
+2. Navigate to Your Project Folder
+   If you've already cloned or copied the project, navigate to it:
+   cd path/to/your-project
+
+3. Install Project Dependencies
+   Run the package manager to install dependencies:
+   npm install
+
+4. Install localforage
+   Run:
+   npm install localforage
+
+5. Start the Development Server
+   Run:
+   npm run dev # or pnpm dev / yarn dev
+
+<!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -47,4 +78,4 @@ export default tseslint.config({
     ...react.configs['jsx-runtime'].rules,
   },
 })
-```
+``` -->
