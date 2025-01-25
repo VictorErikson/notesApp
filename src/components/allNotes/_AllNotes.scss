@@ -1,0 +1,87 @@
+@use "../../../partials/mixins" as mixins;
+@import '../../../partials/variables';
+
+.allNotesMobile{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 4px;
+    border-radius: 8px 0px;
+    h2{
+        @include mixins.text-preset1;
+    }
+
+    .note-card{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px;
+        
+        h3{
+            @include mixins.text-preset3;
+        }
+
+        .tags{
+            display: flex; 
+            gap: 4px;
+            
+            
+            .tag{
+                @include mixins.text-preset6;
+                padding: 2px 6px;
+                border-radius: 4px;
+
+            }
+        }
+
+        .date{
+            @include mixins.text-preset6;
+        }
+    }
+
+}
+
+body.light {
+    .allNotesBackground{
+        background: $Neutral100;
+    }
+    .allNotesMobile{
+        background: $BaseWhite;
+        color: $Neutral950;
+    }
+    .note-card{
+        border-bottom: 1px solid $Neutral200; 
+
+        .tag{
+            background: $Neutral200;
+        }
+
+        .date{
+            color: $Neutral700;
+        }
+    }
+
+}
+
+body.dark {
+    .allNotesBackground{
+        background: $Neutral800;
+    }
+    .allNotesMobile{
+        background: $Neutral950;
+        color: $BaseWhite;
+    }
+    .note-card{
+        border-bottom: 1px solid $Neutral800; 
+
+        .tag{
+            background: $Neutral700;
+        }
+
+        .date{
+            color: $Neutral300;
+        }
+    }
+   
+
+}
