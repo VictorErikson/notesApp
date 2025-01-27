@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 import { UserContext, userData } from "./context/AuthContext";
 import { useState } from "react";
 import { Users } from "../public/api/types";
+import NewNote from "./pages/NewNote/NewNote";
 
 const App = () => {
   //Setting mode
@@ -39,6 +40,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/NewNote" element={<NewNote />} />
             <Route path="/Search" element={<Search />} />
             <Route path="/Archived" element={<Archived />} />
             <Route path="/Tags" element={<Tags />} />

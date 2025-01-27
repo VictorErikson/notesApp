@@ -99,6 +99,7 @@ const Sidebar = () => {
         <div className="tags">
           {tags.map((tag) => (
             <button
+              key={tag}
               id={tag}
               className={activeButton === tag ? "active" : ""}
               onClick={() => setActiveButton(tag)}

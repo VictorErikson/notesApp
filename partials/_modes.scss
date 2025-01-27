@@ -15,9 +15,15 @@ body.SourceCode{
 body.light {
     background: $Neutral0;
     color: $Neutral950;
+    button {
+        color: $Neutral950;
+    }
 }
 
 body.dark {
     background: $Neutral950;
     color: $Neutral0;
+    button {
+        color: $Neutral0;
+    }
 }

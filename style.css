@@ -74,6 +74,8 @@ body {
 button {
   background: none;
   border: none;
+  color: #0E121B;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -118,8 +120,14 @@ body.light {
   background: #FFFFFF;
   color: #0E121B;
 }
+body.light button {
+  color: #0E121B;
+}
 
 body.dark {
   background: #0E121B;
+  color: #FFFFFF;
+}
+body.dark button {
   color: #FFFFFF;
 }/*# sourceMappingURL=style.css.map */

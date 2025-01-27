@@ -38,6 +38,10 @@
             width: 240px;
             border-radius: 8px;
 
+            &:hover{
+                cursor: pointer;
+            }
+
             h2, h3 {
                 @include mixins.text-preset4;
             }

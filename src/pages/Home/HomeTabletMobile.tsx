@@ -9,7 +9,7 @@ const HomeTabletMobile = () => {
       <PageHeaderMobile />
       <AllNotesMobile />
       <MenuBarMobile />
-      <ChangeModeBtn />
+      {/* <ChangeModeBtn /> */}
     </main>
   );
 };

@@ -42,7 +42,7 @@ const MenuBarMobile = () => {
       className="mobile_menu"
     >
       {buttons.map(({ id, icon }) => (
-        <>
+        <React.Fragment key={id}>
           <button
             key={id}
             className={activeButton === id ? "active" : ""}
@@ -52,7 +52,7 @@ const MenuBarMobile = () => {
             <p style={{ color: getButtonColor(id) }}>{id}</p>
           </button>
           <hr></hr>
-        </>
+        </React.Fragment>
       ))}
     </nav>
   );

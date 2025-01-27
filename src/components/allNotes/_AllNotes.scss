@@ -5,55 +5,161 @@
     display: flex;
     flex-direction: column;
     padding: 20px 16px;
-    gap: 4px;
+    // padding-bottom: 56px;
+    padding-bottom: 0px;
+    gap: 16px;
     border-radius: 8px 0px;
-    h2{
-        @include mixins.text-preset1;
+    height: 88vh;
+    box-sizing: border-box;
+
+    @include mixins.tablet {
+        gap: 16px;
+        padding: 24px 32px;
+
+         
     }
 
-    .note-card{
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        padding: 8px;
-        
-        h3{
-            @include mixins.text-preset3;
+    h2{
+        @include mixins.text-preset1;
+        &:hover{
+            cursor: default;
         }
+    }
 
-        .tags{
-            display: flex; 
-            gap: 4px;
-            
-            
-            .tag{
-                @include mixins.text-preset6;
-                padding: 2px 6px;
-                border-radius: 4px;
+    .notes-container {
+        max-height: 80vh; 
+        overflow-y: auto; 
+        padding-bottom: 56px;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        /* Hide scrollbar for Firefox */
+        scrollbar-width: none;
+        /* Hide scrollbar for Internet Explorer/Edge */
+        -ms-overflow-style: none;
 
+        button{
+            width: 100%;
+            display: block;
+            &:hover{
+                cursor: pointer;
             }
         }
 
-        .date{
-            @include mixins.text-preset6;
+        .note-card{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 8px;
+            border-radius: 6px;
+
+            &:hover + hr {
+                background: none;
+            }
+
+            h3{
+                @include mixins.text-preset3;
+            }
+
+            .tags{
+                display: flex; 
+                gap: 4px;
+                
+                
+                .tag{
+                    @include mixins.text-preset6;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                }
+            }
+
+            .date{
+                @include mixins.text-preset6;
+            }
+        }
+        .no-notes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .no-notes{
+                @include mixins.text-preset5;
+                color: $Neutral950;
+                background: $Neutral100;
+                display: flex;
+                gap: 10px;
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid $Neutral200;
+            }
+
+            hr {
+                background: none;
+
+                @include mixins.tablet {
+                    height: 1px;
+                    background: $Neutral200;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .create-note {
+        width: 49px;
+        height: 49px;
+        border-radius: 9999px;
+        background: $Blue500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 72px;
+        right: 16px ;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include mixins.tablet{
+            bottom: 106px;
+            right: 35px ;
+            width: 64px;
+            height: 64px;
         }
     }
 
 }
 
 body.light {
-    .allNotesBackground{
+    .notesBackground{
         background: $Neutral100;
     }
     .allNotesMobile{
         background: $BaseWhite;
         color: $Neutral950;
+        hr {
+            background: $Neutral200;
+            height: 1px;
+            border: 0px;
+        }
     }
-    .note-card{
-        border-bottom: 1px solid $Neutral200; 
+    
 
+    .note-card{
+
+        &:hover{
+            background: $Neutral100;
+            .tag{
+                background: $Neutral300;
+            
+            }
+        }
         .tag{
             background: $Neutral200;
+            &:hover{
+                background: $Neutral200;
+            }
+
         }
 
         .date{
@@ -64,18 +170,33 @@ body.light {
 }
 
 body.dark {
-    .allNotesBackground{
+    .notesBackground{
         background: $Neutral800;
     }
     .allNotesMobile{
         background: $Neutral950;
         color: $BaseWhite;
+        hr {
+            background: $Neutral800;
+            height: 1px;
+            border: 0px;
+        }
     }
     .note-card{
-        border-bottom: 1px solid $Neutral800; 
+
+        &:hover{
+            background: $Neutral800;
+            .tag{
+                background: $Neutral600;
+            
+            }
+        }
 
         .tag{
             background: $Neutral700;
+            &:hover{
+                background: $Neutral700;
+            }
         }
 
         .date{
