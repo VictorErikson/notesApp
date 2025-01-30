@@ -3,6 +3,7 @@
 
 
 .newNote{
+    
     background: $BaseWhite;
     color: $Neutral950;
     border-radius: 6px;
@@ -10,4 +11,27 @@
     flex-direction: column;
     gap: 12px;
     padding: 20px 16px;
+
+    @include mixins.tablet{
+        gap: 16px;
+        padding: 20px 32px;
+    }
+
+    hr{
+        background-color: $Neutral200;
+        border: none;
+        height: 1px;
+    }
+}
+
+
+body.dark {
+    .newNote{
+        background: $Neutral950;
+        color: $BaseWhite;
+
+        hr{
+            background-color: $Neutral800;
+        }
+    }
 }

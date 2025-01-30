@@ -14,7 +14,7 @@ body.dark .mobile_menu{
 }
 
 .mobile_menu{
-    
+    box-sizing: border-box;
     display: flex;
     padding: 12px 16px;
     justify-content: space-evenly;

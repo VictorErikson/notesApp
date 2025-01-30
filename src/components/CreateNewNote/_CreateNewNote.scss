@@ -1,0 +1,111 @@
+@use '../../../partials/mixins' as mixins;
+@import '../../../partials/variables';
+
+
+
+.newNote-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    
+   
+    #heading {
+        color: $Neutral950;
+        @include mixins.text-preset2;
+
+        &:focus {
+            outline: none;
+        }
+         
+    }
+    
+    .tags{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        box-sizing: border-box;
+        
+        .tagHeading{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 0px;
+            flex-shrink: 0;
+            width: 115px;
+            cursor: default;
+            h3{
+                @include mixins.text-preset6;
+                color: $Neutral700;
+            }
+        }
+        #tags{
+            min-width: auto;
+            @include mixins.text-preset6;
+            color: $Neutral950;
+            &.placeholder{
+                color: $Neutral400;
+            }
+
+            &:focus{
+                outline: none;
+            }
+
+            
+        }
+    }
+    
+    .lastSaved{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        cursor: default;
+        .lastSavedHeading{
+            display: flex;
+            gap: 6px;
+            padding: 4px 0px;
+            align-items: center;
+            width: 115px;
+            flex-shrink: 0;
+
+            h3{
+                @include mixins.text-preset6;
+                color: $Neutral700;
+            }
+        }
+        #lastSaved{
+            @include mixins.text-preset6;
+            color: $Neutral400;
+        }
+        
+    }
+
+    #text{
+        @include mixins.text-preset6;
+        color: $Neutral700;;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+body.dark .newNote-container{
+    color: $BaseWhite;
+    #heading{
+        color: $BaseWhite;
+    }
+    
+    .tagHeading h3, .lastSavedHeading h3, #lastSaved{
+        color: $Neutral300;
+    }
+    #tags{
+        color: $BaseWhite;
+        &.placeholder{ 
+            color: $Neutral400;
+        }
+    }
+    #text{
+        color: $Neutral100;
+    }
+}

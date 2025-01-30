@@ -1,18 +1,49 @@
-
+@use "../../../partials/mixins" as mixins;
+@import '../../../partials/variables';
 
 .noteTopMenuMobile{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    button{
+        @include mixins.text-preset5;
+    }
+
     .back-button{
         display: flex;
         align-items: center;
+        gap: 4px;
+        color: $Neutral600;
     }
 
     .right{
         display: flex;
         align-items: center;
         gap: 16px;
+        .cancel {
+            color: $Neutral600;
+        }
+        .save {
+            color: $Blue500;
+        }
+    }
+}
+
+body.dark{
+    .noteTopMenuMobile{
+        
+        .back-button{
+            color: $Neutral300;
+        }
+        .right{
+            .cancel {
+                color: $Neutral300;
+                
+            }
+            .save {
+                color: $Blue500;
+            }
+        }
     }
 }

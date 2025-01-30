@@ -78,6 +78,17 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Inter", sans-serif;
+  color: #0E121B;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Inter", sans-serif;
+  color: #0E121B;
+}
+
 :root {
   --BaseWhite: #FFFFFF;
   --BaseBlack: #0E121B;

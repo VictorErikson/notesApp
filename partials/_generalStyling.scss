@@ -16,3 +16,9 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Inter', sans-serif;
+    color: #0E121B;
+}
+

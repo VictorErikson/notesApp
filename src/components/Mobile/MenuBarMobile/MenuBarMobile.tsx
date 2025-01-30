@@ -41,7 +41,7 @@ const MenuBarMobile = () => {
       style={{ borderTop: `1px solid ${borderColor}` }}
       className="mobile_menu"
     >
-      {buttons.map(({ id, icon }) => (
+      {buttons.map(({ id, icon }, index) => (
         <React.Fragment key={id}>
           <button
             key={id}
@@ -51,7 +51,7 @@ const MenuBarMobile = () => {
             {React.cloneElement(icon, { color: getButtonColor(id) })}
             <p style={{ color: getButtonColor(id) }}>{id}</p>
           </button>
-          <hr></hr>
+          {index < buttons.length - 1 && <hr />}
         </React.Fragment>
       ))}
     </nav>

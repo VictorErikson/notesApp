@@ -1,27 +1,38 @@
 import IconArchive from "../Images/icon-archive";
 import ArrowLeft from "../Images/icon-arrow-left";
 import IconDelete from "../Images/icon-delete";
+import { useMode } from "../../context/ModeContext.tsx";
 import "./_NoteTopMenuMobile.scss";
 
 const NoteTopMenuMobile: React.FC<{
   showErase?: boolean;
   showArchive?: boolean;
+  showRestore?: boolean;
 }> = ({ showErase, showArchive }) => {
+  const { mode } = useMode();
+  const colorIcons = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue(mode === "dark" ? "--Neutral300" : "--Neutral600");
+
   return (
     <>
       <div className="noteTopMenuMobile">
         <button className="back-button">
-          <ArrowLeft size={18} color=""></ArrowLeft>Go Back
+          <ArrowLeft size={18} color={colorIcons}></ArrowLeft>Go Back
         </button>
         <div className="right">
           {showErase && (
             <button className="erase">
-              <IconDelete></IconDelete>
+              <IconDelete
+                width={18}
+                height={18}
+                color={colorIcons}
+              ></IconDelete>
             </button>
           )}
           {showArchive && (
             <button className="archive">
-              <IconArchive></IconArchive>
+              <IconArchive size={18} color={colorIcons}></IconArchive>
             </button>
           )}
 
