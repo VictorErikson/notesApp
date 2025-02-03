@@ -30,7 +30,7 @@ const AllNotesMobile = () => {
   useEffect(() => {
     const loadNotes = async () => {
       try {
-        const data = await fetchData<Notes[]>("/api/data/notes.json");
+        const data = await fetchData<Notes[]>("http://localhost:5000/notes");
         const userNotes = data.filter((note) => note.userId === user.id);
         setNotes(userNotes);
       } catch (err) {
@@ -40,7 +40,7 @@ const AllNotesMobile = () => {
       }
     };
     loadNotes();
-  }, []);
+  }, [user.id]);
 
   //hiding previous hr when hovering
   useEffect(() => {
@@ -81,18 +81,18 @@ const AllNotesMobile = () => {
         <h2>All Notes</h2>
         <div className="notes-container">
           {notes.length > 0 ? (
-            notes.map((note) => <NoteCard key={note.noteId} note={note} />)
+            notes.map((note) => <NoteCard key={note.id} note={note} />)
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
-                You don’t have any notes yet. Start a new note to capture your
+                You don't have any notes yet. Start a new note to capture your
                 thoughts and ideas.
               </h3>
               <hr></hr>
             </div>
           )}
         </div>
-        <button onClick={() => navigate("/NewNote")} className="create-note">
+        <button onClick={() => navigate("/notes/new")} className="create-note">
           <IconPlus size={32} color={"#FFF"}></IconPlus>
         </button>
       </div>

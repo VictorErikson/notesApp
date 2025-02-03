@@ -1,81 +1,93 @@
-Setting up /Installing on new computer
+# 📝 NotesApp
 
-1. Install Dependencies
-   Make sure you have the necessary software installed:
+A simple and fast note-taking app built with **React, TypeScript, and Vite**. Notes are stored in **local storage** by default, but you can enable full backend functionality with `json-server` (optional).
 
-Node.js (Download from nodejs.org)
-Check if Node.js is installed:
-node -v
+## 🚀 Features
 
-Install or update Node.js if needed.
-npm or pnpm/yarn (comes with Node.js)
+- 📌 **Create, edit, and delete notes**
+- 🔍 **Search and filter notes**
+- 💾 **Data persistence using local storage**
+- 🔄 **Fast and responsive UI with React & Vite**
+- 🛠️ **Optional backend for full CRUD operations**
 
-Check npm version:
-npm -v
+## 📦 Installation
 
-2. Navigate to Your Project Folder
-   If you've already cloned or copied the project, navigate to it:
-   cd path/to/your-project
+### 1️⃣ Clone the repository
 
-3. Install Project Dependencies
-   Run the package manager to install dependencies:
-   npm install
-
-4. Install localforage
-   Run:
-   npm install localforage
-
-5. Start the Development Server
-   Run:
-   npm run dev # or pnpm dev / yarn dev
-
-<!-- # React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+git clone https://github.com/VictorErikson/notesApp.git
+cd notesApp
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2️⃣ Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```sh
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-``` -->
+### 3️⃣ Start the development server
+
+```sh
+npm run dev
+```
+
+The app should now be running at `http://localhost:5173/` (or another port if 5173 is occupied).
+
+---
+
+## 🔥 Optional: Enable Full Backend Functionality
+
+If you want to **store notes in a backend instead of local storage**, you can use `json-server`.
+
+### 1️⃣ Install `json-server`
+
+```sh
+npm install -g json-server
+```
+
+### 2️⃣ Create & start the backend
+
+Run the following command to start a local backend that stores notes in `db.json`:
+
+```sh
+json-server --watch db.json --port 5000
+```
+
+This will start a mock backend with the following endpoints:
+
+- Notes API: `http://localhost:5000/notes`
+- Users API: `http://localhost:5000/users`
+
+### 3️⃣ Update API URL in your code
+
+Modify your API calls in the project to use `http://localhost:5000/notes` or `http://localhost:5000/users` instead of local storage.
+
+---
+
+## 🛠️ Build & Deployment
+
+To build the project for production:
+
+```sh
+npm run build
+```
+
+To preview the production build:
+
+```sh
+npm run preview
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo, submit pull requests, or report issues.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+Happy coding! 🚀

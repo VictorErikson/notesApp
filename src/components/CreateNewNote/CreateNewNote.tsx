@@ -4,7 +4,11 @@ import IconTag from "../Images/icon-tag";
 import { useMode } from "../../context/ModeContext.tsx";
 import "./_CreateNewNote.scss";
 
-const CreateNewNote = () => {
+interface CreateNewNoteProps {
+  setNote: (note: { title: string; tags: string; text: string }) => void;
+}
+
+const CreateNewNote = ({ setNote }: CreateNewNoteProps) => {
   const { mode } = useMode();
   const colorIcons = getComputedStyle(
     document.documentElement
@@ -48,6 +52,38 @@ const CreateNewNote = () => {
       });
     };
   }, []);
+
+  //Capture changes and updates state
+  useEffect(() => {
+    const updateNoteState = () => {
+      const heading =
+        (document.getElementById("heading") as HTMLElement)?.innerText || "";
+      const tags =
+        (document.getElementById("tags") as HTMLElement)?.innerText || "";
+      const text =
+        (document.getElementById("text") as HTMLElement)?.innerText || "";
+
+      setNote({ title: heading, tags, text });
+    };
+
+    document
+      .getElementById("heading")
+      ?.addEventListener("input", updateNoteState);
+    document.getElementById("tags")?.addEventListener("input", updateNoteState);
+    document.getElementById("text")?.addEventListener("input", updateNoteState);
+
+    return () => {
+      document
+        .getElementById("heading")
+        ?.removeEventListener("input", updateNoteState);
+      document
+        .getElementById("tags")
+        ?.removeEventListener("input", updateNoteState);
+      document
+        .getElementById("text")
+        ?.removeEventListener("input", updateNoteState);
+    };
+  }, [setNote]);
 
   return (
     <div className="newNote-container">

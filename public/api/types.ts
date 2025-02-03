@@ -1,7 +1,7 @@
 
 
 export type Users = {
-    id: number;
+    id: string;
     name: string;
     username: string;
     password: string;
@@ -9,8 +9,8 @@ export type Users = {
 }   
 
 export type Notes = {
-    noteId: number;
-    userId: number;
+    id: string;
+    userId: string;
     heading: string;
     tags: string[];
     lastEdited: string;
