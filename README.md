@@ -47,7 +47,7 @@ npm install -g json-server
 
 ### 2️⃣ Create & start the backend
 
-Run the following command to start a local backend that stores notes in `db.json`:
+Go to notesApp\public\api\data and Run the following command to start a local backend that stores notes in `db.json`:
 
 ```sh
 json-server --watch db.json --port 5000

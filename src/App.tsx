@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ModeProvider } from "./context/ModeContext";
-// import { useState, useEffect } from "react";
 
 import Home from "./pages/Home/Home";
 import Search from "./pages/Search/Search";
@@ -12,26 +11,9 @@ import { UserContext, userData } from "./context/AuthContext";
 import { useState } from "react";
 import { Users } from "../public/api/types";
 import NewNote from "./pages/NewNote/NewNote";
+import NotesPage from "./pages/NotesPage/NotesPage";
 
 const App = () => {
-  //Setting mode
-  // const getSystemMode = (): "light" | "dark" => {
-  //   return window.matchMedia("(prefers-color-scheme: dark)").matches
-  //     ? "dark"
-  //     : "light";
-  // };
-
-  // const [mode, setMode] = useState<"light" | "dark">(() => getSystemMode());
-
-  // useEffect(() => {
-  //   document.body.className = mode;
-  // }, [mode]);
-
-  //change this when the mode-setting is done
-  // const toggleMode = () => {
-  //   setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-  // };
-
   const [user, setUser] = useState<Users>(userData);
 
   return (
@@ -41,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/notes/new" element={<NewNote />} />
+            <Route path="/notes/:noteId" element={<NotesPage />} />
             <Route path="/Search" element={<Search />} />
             <Route path="/Archived" element={<Archived />} />
             <Route path="/Tags" element={<Tags />} />

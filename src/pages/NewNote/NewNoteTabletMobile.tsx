@@ -22,6 +22,7 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
         <div className="newNote">
           <NoteTopMenuMobile
             note={note}
+            create={true}
             showErase={false}
             showArchive={false}
             showRestore={false}

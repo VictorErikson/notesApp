@@ -5,17 +5,26 @@ import { useContext } from "react";
 import { UserContext } from "../../context/AuthContext.tsx";
 import { useMode } from "../../context/ModeContext.tsx";
 import "./_NoteTopMenuMobile.scss";
-import saveNote from "../../services/saveNote.tsx";
+import { saveNote, saveNoteFirstTime } from "../../services/saveNote.tsx";
 import { useNavigate } from "react-router-dom";
 
-interface Note {
-  title: string;
+interface NoteNew {
+  heading: string;
   tags: string;
+  text: string;
+}
+interface Note {
+  id?: string;
+  userId?: string;
+  heading: string;
+  tags: string[];
+  lastEdited?: string;
   text: string;
 }
 
 interface NoteTopMenuMobileProps {
-  note: Note;
+  note: Note | NoteNew;
+  create: boolean;
   showErase?: boolean;
   showArchive?: boolean;
   showRestore?: boolean;
@@ -23,6 +32,7 @@ interface NoteTopMenuMobileProps {
 
 const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
   note,
+  create,
   showErase,
   showArchive,
   showRestore,
@@ -60,7 +70,11 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           <button className="cancel">Cancel</button>
           <button
             className="save"
-            onClick={() => saveNote(note, user.id, navigate)}
+            onClick={() =>
+              create
+                ? saveNoteFirstTime(note, user.id, navigate)
+                : saveNote(note)
+            }
           >
             Save Note
           </button>

@@ -1,11 +1,14 @@
 import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
-import CreateNewNote from "../../components/CreateNewNote/CreateNewNote";
+import Note from "../../components/Note/Note";
 
 interface Note {
-  title: string;
-  tags: string;
+  id: string;
+  userId: string;
+  heading: string;
+  tags: string[];
+  lastEdited: string;
   text: string;
 }
 
@@ -26,7 +29,7 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
             showArchive={true}
             showRestore={false}
           />
-          <CreateNewNote setNote={setNote} />
+          <Note setNote={setNote} />
         </div>
       </div>
       <MenuBarMobile />
