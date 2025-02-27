@@ -2,6 +2,8 @@
 -cannot save an empty note. alert in services/saveNote.tsx (make into the same error square as "sure you wanna delete?")
 -"Failed to fetch users" -error in AllNotesMobile
 
+\* BUG if user make field empty when editing
+
 \*redo buttons to links?
 
 \*insert showRestore button into NoteTopMenuMobile

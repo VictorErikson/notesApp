@@ -8,7 +8,7 @@
         "Dev",
         "React"
       ],
-      "lastEdited": "2024-10-29",
+      "lastEdited": "2025-02-27",
       "text": "Key performance optimization techniques:\n\n1. Code Splitting\n- Use React.lazy() for route-based splitting\n- Implement dynamic imports for heavy components\n\n2. Memoization\n- useMemo for expensive calculations\n- useCallback for function props\n- React.memo for component optimization\n\n3. Virtual List Implementation\n- Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks"
     },
     {
@@ -27,10 +27,9 @@
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "Favorite Pasta Recipes",
       "tags": [
-        "Cooking",
-        "Recipes"
+        "Cooking, Recipes"
       ],
-      "lastEdited": "2024-10-27",
+      "lastEdited": "2025-02-27",
       "text": "My go-to pasta recipes for quick and delicious meals:\n\n1. Classic Carbonara\n- Ingredients: eggs, parmesan, pancetta, black pepper\n- Key technique: mix eggs and cheese off heat to avoid scrambling\n\n2. Pesto Pasta\n- Blend fresh basil, garlic, pine nuts, and olive oil\n- Toss with cooked pasta and cherry tomatoes\n\n3. Spicy Arrabbiata\n- Use crushed tomatoes, garlic, and red chili flakes\n- Simmer sauce for 15 minutes for rich flavor\n\nTODO: Try homemade pasta-making techniques"
     },
     {
@@ -339,14 +338,6 @@
       "text": "test7"
     },
     {
-      "id": "d4abe89f-eff5-4910-9844-e2f2259e4c6b",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "Water plants",
-      "tags": [],
-      "lastEdited": "2025-02-05",
-      "text": "* water plats"
-    },
-    {
       "id": "13a6fd8e-b223-400c-90ee-73faec1962a0",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "<br>",
@@ -378,6 +369,59 @@
       ],
       "lastEdited": "2025-02-06",
       "text": "asd"
+    },
+    {
+      "id": "38b5ee3c-250b-44a4-bc36-6a13503bd347",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "study schedule",
+      "tags": [
+        "school",
+        "study"
+      ],
+      "lastEdited": "2025-02-27",
+      "text": "1. wake up\n2. make coffe\n3. start computer, 3.5 - start VSCode\n4. start studying 5. lunch 6. make coffe"
+    },
+    {
+      "id": "657632c2-8c5b-418b-a282-802c4967f4a7",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "1",
+      "tags": [
+        "1"
+      ],
+      "lastEdited": "2025-02-27",
+      "text": "1"
+    },
+    {
+      "id": "5ad4a753-7e77-4d31-a056-c38a3cab0082",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "title",
+      "tags": [
+        "tag"
+      ],
+      "lastEdited": "2025-02-27",
+      "text": "text"
+    },
+    {
+      "id": "f9bb1bcc-5211-425e-a868-932e9adc523e",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "new",
+      "tags": [
+        "new",
+        "test",
+        "1"
+      ],
+      "lastEdited": "2025-02-27",
+      "text": "testing"
+    },
+    {
+      "id": "6b0a75ff-c5bc-47cb-af42-b065fc706831",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "1",
+      "tags": [
+        "1"
+      ],
+      "lastEdited": "2025-02-27",
+      "text": "1"
     }
   ],
   "users": [

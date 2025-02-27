@@ -100,21 +100,28 @@ const AllNotesMobile = () => {
   );
 };
 
-const NoteCard: React.FC<{ note: Notes }> = ({ note }) => (
-  <>
-    <button className="note-card">
-      <h3>{note.heading}</h3>
-      <div className="tags">
-        {note.tags.map((tag: string) => (
-          <a key={tag} className="tag">
-            {tag}
-          </a>
-        ))}
-      </div>
-      <p className="date">{formatDate(note.lastEdited)}</p>
-    </button>
-    <hr></hr>
-  </>
-);
+const NoteCard: React.FC<{ note: Notes }> = ({ note }) => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <button
+        className="note-card"
+        onClick={() => navigate(`/notes/${note.id}`)}
+      >
+        <h3>{note.heading}</h3>
+        <div className="tags">
+          {note.tags.map((tag: string) => (
+            <a key={tag} className="tag">
+              {tag}
+            </a>
+          ))}
+        </div>
+        <p className="date">{formatDate(note.lastEdited)}</p>
+      </button>
+      <hr></hr>
+    </>
+  );
+};
 
 export default AllNotesMobile;

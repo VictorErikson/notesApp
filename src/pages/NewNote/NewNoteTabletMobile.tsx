@@ -2,16 +2,17 @@ import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import CreateNewNote from "../../components/CreateNewNote/CreateNewNote";
+import { Notes } from "../../../public/api/types.ts";
 
-interface Note {
-  title: string;
-  tags: string;
-  text: string;
-}
+// interface Note {
+//   title: string;
+//   tags: string;
+//   text: string;
+// }
 
 interface NewNoteTabletMobileProps {
-  note: Note;
-  setNote: (note: Note) => void;
+  note: Notes;
+  setNote: (note: Notes) => void;
 }
 
 const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {

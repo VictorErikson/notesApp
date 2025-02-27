@@ -8,11 +8,20 @@ export type Users = {
     email: string;
 }   
 
-export type Notes = {
-    id: string;
-    userId: string;
-    heading: string;
-    tags: string[];
-    lastEdited: string;
-    text: string;
+// export interface Notes {
+//     id: string;
+//     userId: string;
+//     heading: string;
+//     tags: string[];
+//     lastEdited: string;
+//     text: string;
+// }
+
+export interface Notes {
+   id?: string;
+   userId?: string;
+   heading: string;       
+   tags: string[];       
+   lastEdited?: string;
+   text: string;
 }

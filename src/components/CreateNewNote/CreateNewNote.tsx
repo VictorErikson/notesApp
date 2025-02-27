@@ -3,9 +3,10 @@ import IconClock from "../Images/icon-clock";
 import IconTag from "../Images/icon-tag";
 import { useMode } from "../../context/ModeContext.tsx";
 import "./_CreateNewNote.scss";
+import { Notes } from "../../../public/api/types.ts";
 
 interface CreateNewNoteProps {
-  setNote: (note: { title: string; tags: string; text: string }) => void;
+  setNote: (note: { heading: string; tags: string[]; text: string }) => void;
 }
 
 const CreateNewNote = ({ setNote }: CreateNewNoteProps) => {
@@ -13,7 +14,6 @@ const CreateNewNote = ({ setNote }: CreateNewNoteProps) => {
   const colorIcons = getComputedStyle(
     document.documentElement
   ).getPropertyValue(mode === "dark" ? "--Neutral300" : "--Neutral700");
-
   //placeholders fot the contentEditable elements
 
   useEffect(() => {
@@ -58,12 +58,20 @@ const CreateNewNote = ({ setNote }: CreateNewNoteProps) => {
     const updateNoteState = () => {
       const heading =
         (document.getElementById("heading") as HTMLElement)?.innerText || "";
-      const tags =
-        (document.getElementById("tags") as HTMLElement)?.innerText || "";
       const text =
         (document.getElementById("text") as HTMLElement)?.innerText || "";
+      // const tags =
+      //   (document.getElementById("tags") as HTMLElement)?.innerText || "";
+      const rawTags =
+        (document.getElementById("tags") as HTMLElement)?.innerText || "";
 
-      setNote({ title: heading, tags, text });
+      // Convert the string to an array, trimming whitespace
+      const tagsArray = rawTags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag !== "");
+
+      setNote({ heading, tags: tagsArray, text });
     };
 
     document

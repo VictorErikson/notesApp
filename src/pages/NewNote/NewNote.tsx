@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import NewNoteTabletMobile from "./NewNoteTabletMobile";
 import NewNoteDesktop from "./NewNoteDesktop";
 import "./_newNote.scss";
+import { Notes } from "../../../public/api/types.ts";
 
-interface Note {
-  title: string;
-  tags: string;
-  text: string;
-}
+// interface Note {
+//   heading: string;
+//   tags: string;
+//   text: string;
+// }
 
 const NewNote = () => {
   const [isTablet, setIsTablet] = useState(window.innerWidth < 1024);
-  const [note, setNote] = useState<Note>({ title: "", tags: "", text: "" });
+  const [note, setNote] = useState<Notes>({ heading: "", tags: [], text: "" });
 
   useEffect(() => {
     const handleResize = () => setIsTablet(window.innerWidth < 1024);

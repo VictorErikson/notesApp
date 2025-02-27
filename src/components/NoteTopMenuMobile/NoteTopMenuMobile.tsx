@@ -7,27 +7,29 @@ import { useMode } from "../../context/ModeContext.tsx";
 import "./_NoteTopMenuMobile.scss";
 import { saveNote, saveNoteFirstTime } from "../../services/saveNote.tsx";
 import { useNavigate } from "react-router-dom";
+import { Notes } from "../../../public/api/types.ts";
 
-interface NoteNew {
-  heading: string;
-  tags: string;
-  text: string;
-}
-interface Note {
-  id?: string;
-  userId?: string;
-  heading: string;
-  tags: string[];
-  lastEdited?: string;
-  text: string;
-}
+// interface NoteNew {
+//   heading: string;
+//   tags: string;
+//   text: string;
+// }
+// interface Note {
+//   id?: string;
+//   userId?: string;
+//   heading: string;
+//   tags: string[];
+//   lastEdited?: string;
+//   text: string;
+// }
 
 interface NoteTopMenuMobileProps {
-  note: Note | NoteNew;
-  create: boolean;
+  note: Notes;
+  create: boolean | null;
   showErase?: boolean;
   showArchive?: boolean;
   showRestore?: boolean;
+  setShowSavedMsg: (value: boolean) => void;
 }
 
 const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
@@ -36,6 +38,7 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
   showErase,
   showArchive,
   showRestore,
+  setShowSavedMsg,
 }) => {
   const user = useContext(UserContext);
   const { mode } = useMode();
@@ -44,6 +47,16 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
   const colorIcons = getComputedStyle(
     document.documentElement
   ).getPropertyValue(mode === "dark" ? "--Neutral300" : "--Neutral600");
+
+  const handleSave = async () => {
+    if (create) {
+      await saveNoteFirstTime(note, user.id, navigate);
+    } else {
+      await saveNote(note);
+    }
+    setShowSavedMsg(true);
+    setTimeout(() => setShowSavedMsg(false), 3000);
+  };
 
   return (
     <>
@@ -67,15 +80,10 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
             </button>
           )}
 
-          <button className="cancel">Cancel</button>
-          <button
-            className="save"
-            onClick={() =>
-              create
-                ? saveNoteFirstTime(note, user.id, navigate)
-                : saveNote(note)
-            }
-          >
+          <button className="cancel" onClick={() => {}}>
+            Cancel
+          </button>
+          <button className="save" onClick={handleSave}>
             Save Note
           </button>
         </div>

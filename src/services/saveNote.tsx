@@ -1,42 +1,18 @@
-// const save = (
-//   title: string,
-//   insertTags: string,
-//   insertText: string,
-//   userId: number,
-//   noteId: string
-// ) => {
-//   const heading = title;
-//   const tags: string[] = insertTags.split(",").map((word) => word.trim());
-//   const lastEdited = (): string => {
-//     return new Intl.DateTimeFormat("sv-SE").format(new Date());
-//   };
-//   const text = insertText;
-// };
 import { v4 as uuidv4 } from "uuid";
+import { Notes } from "../../public/api/types.ts";
 
-interface NoteNew {
-  title: string;
-  tags: string;
-  text: string;
-}
-interface Note {
-  id: string;
-  userId: string;
-  heading: string;
-  tags: string[];
-  lastEdited: string;
-  text: string;
-}
-<br></br>;
 //Fix this alert
-export const saveNote = async (note: Note) => {
+export const saveNote = async (note: Notes) => {
   if (
     !note.tags.join(", ").trim() ||
     !note.text.trim() ||
-    note.tags.join(", ") === "Type here..." ||
+    note.tags.join(", ") ===
+      "Add tags separated by commas (e.g. Work, Planning)" ||
     note.text === "Start typing your note here..."
   ) {
-    alert("cannot save an empty note.");
+    alert(
+      "Cannot save an empty note. Make sure to add a title, text, and at least one valid tag."
+    );
     return;
   }
 
@@ -65,15 +41,24 @@ export const saveNote = async (note: Note) => {
 };
 //Fix this alert
 export const saveNoteFirstTime = async (
-  note: NoteNew,
+  note: Notes,
   user: string,
-  navigate: (path: string) => void
+  navigate: (path: string, options?: { state?: any }) => void
 ) => {
+  if (!note || !note.heading || !note.text || !note.tags) {
+    alert(
+      "Cannot save an empty note. Make sure to add a title, text, and at least one valid tag."
+    );
+    return;
+  }
+
   if (
-    !note.title.trim() ||
+    !note.heading.trim() ||
     !note.text.trim() ||
-    note.title === "Type here..." ||
-    note.text === "Start typing your note here..."
+    note.heading === "Type here..." ||
+    note.text === "Start typing your note here..." ||
+    note.tags.length === 0 ||
+    note.tags.includes("Add tags separated by commas (e.g. Work")
   ) {
     alert("cannot save an empty note.");
     return;
@@ -82,11 +67,8 @@ export const saveNoteFirstTime = async (
   const newNote = {
     id: uuidv4(),
     userId: user,
-    heading: note.title,
-    tags:
-      note.tags === "Add tags separated by commas (e.g. Work, Planning)"
-        ? []
-        : note.tags.split(",").map((tag) => tag.trim()),
+    heading: note.heading,
+    tags: note.tags,
     lastEdited: new Intl.DateTimeFormat("sv-SE").format(new Date()),
     text: note.text,
   };
@@ -101,7 +83,7 @@ export const saveNoteFirstTime = async (
     if (response.ok) {
       console.log("Note saved successfully!");
 
-      navigate(`/notes/${newNote.id}`);
+      navigate(`/notes/${newNote.id}`, { state: { showSavedMsg: true } });
     } else {
       console.error("Failed to save note");
     }

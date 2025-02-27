@@ -8,6 +8,7 @@
 
     button{
         @include mixins.text-preset5;
+        cursor: pointer;
     }
 
     .back-button{

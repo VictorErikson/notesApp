@@ -1,0 +1,38 @@
+@use "../../../partials/mixins" as mixins;
+@import '../../../partials/variables';
+
+.savedMsg {
+    position: fixed;
+    bottom: 75px;
+    right: 16px;
+    // transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    width: 274px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $Neutral800;
+    border: $Neutral700 solid 1px;
+    border-radius: 8px;
+    @include mixins.text-preset6;
+
+    .text{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    button{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+  }
+  
+  .savedMsg.fade-out {
+    opacity: 0; // Smoothly fade out before disappearing
+  }
