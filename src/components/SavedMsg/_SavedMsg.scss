@@ -13,10 +13,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: $Neutral800;
-    border: $Neutral700 solid 1px;
+    background: $BaseWhite;
+    border: $Neutral200 solid 1px;
     border-radius: 8px;
     @include mixins.text-preset6;
+
+    @include mixins.tablet{
+        bottom: 93px;
+        right: 32px;
+        width: 390px;
+    }
 
     .text{
         display: flex;
@@ -28,11 +34,23 @@
         align-items: center;
         cursor: pointer;
         &:hover{
-            opacity: 0.7;
+            filter: brightness(50%);
         }
     }
   }
   
   .savedMsg.fade-out {
     opacity: 0; // Smoothly fade out before disappearing
+  }
+
+  body.dark{
+    .savedMsg{
+        background: $Neutral800;
+        border: $Neutral700 solid 1px;
+        button{
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
   }

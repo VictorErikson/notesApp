@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation, useNavigate } from "react-router-dom";
 import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import Note from "../../components/Note/Note.tsx";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
-import SavedMsg from "../../components/SavedMsg/Savedmsg.tsx"; // Import SavedMsg component
+import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
 
 interface NoteProps {
   noteId: string;
@@ -16,9 +16,10 @@ interface NoteProps {
 
 const NotesPageTabletMobile = ({ noteId, setNote, note }: NoteProps) => {
   const [loading, setLoading] = useState(true);
-  const [showSavedMsg, setShowSavedMsg] = useState(false); // State for saved message
+  const [showSavedMsg, setShowSavedMsg] = useState(false);
 
-  const location = useLocation(); // Get state from navigation
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadNote = async () => {
@@ -39,13 +40,14 @@ const NotesPageTabletMobile = ({ noteId, setNote, note }: NoteProps) => {
     }
   }, [noteId]);
 
-  // Show the saved message if navigating from saveNoteFirstTime
   useEffect(() => {
     if (location.state?.showSavedMsg) {
       setShowSavedMsg(true);
       setTimeout(() => setShowSavedMsg(false), 3000);
+
+      navigate(location.pathname, { replace: true, state: {} });
     }
-  }, [location.state]);
+  }, [location.state, location.pathname, navigate]);
 
   if (loading) {
     return <div>Loading...</div>;

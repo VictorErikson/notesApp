@@ -1,27 +1,14 @@
 import IconArchive from "../Images/icon-archive";
 import ArrowLeft from "../Images/icon-arrow-left";
 import IconDelete from "../Images/icon-delete";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../context/AuthContext.tsx";
 import { useMode } from "../../context/ModeContext.tsx";
 import "./_NoteTopMenuMobile.scss";
 import { saveNote, saveNoteFirstTime } from "../../services/saveNote.tsx";
 import { useNavigate } from "react-router-dom";
 import { Notes } from "../../../public/api/types.ts";
-
-// interface NoteNew {
-//   heading: string;
-//   tags: string;
-//   text: string;
-// }
-// interface Note {
-//   id?: string;
-//   userId?: string;
-//   heading: string;
-//   tags: string[];
-//   lastEdited?: string;
-//   text: string;
-// }
+import ErrorMsg from "../ErrorMsg/ErrorMsg.tsx";
 
 interface NoteTopMenuMobileProps {
   note: Notes;
@@ -58,15 +45,80 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     setTimeout(() => setShowSavedMsg(false), 3000);
   };
 
+  const deleteNote = async () => {
+    try {
+      const noteDeleted = await fetch(
+        `http://localhost:5000/notes/${note.id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (noteDeleted.ok) {
+        navigate("/", { state: { showDeletedMsg: true } });
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return Promise.reject(error);
+    }
+  };
+
+  const [showEraseMsg, setShowEraseMsg] = useState(false);
+  const textDelete =
+    "Are you sure you want to permanently delete this note? This action cannot be undone.";
+  const cancelBtn = (
+    <button className="cancel" onClick={() => setShowEraseMsg(false)}>
+      Cancel
+    </button>
+  );
+  const deleteBtn = (
+    <button className="delete" onClick={() => deleteNote()}>
+      Delete Note
+    </button>
+  );
+  const colorDeleteIconWarning = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue(mode === "dark" ? "--BaseWhite" : "--Neutral950");
+
+  useEffect(() => {
+    if (showEraseMsg) {
+      document.body.classList.add("modal-active");
+    } else {
+      document.body.classList.remove("modal-active");
+    }
+
+    return () => {
+      document.body.classList.remove("modal-active");
+    };
+  }, [showEraseMsg]);
+
   return (
     <>
+      {showEraseMsg && (
+        <>
+          <ErrorMsg
+            title={"Delete Note"}
+            text={textDelete}
+            imgComponent={
+              <IconDelete
+                width={24}
+                height={25}
+                color={colorDeleteIconWarning}
+              />
+            }
+            Btn1={cancelBtn}
+            Btn2={deleteBtn}
+          />
+          <div className="overlay"></div>
+        </>
+      )}
       <div className="noteTopMenuMobile">
         <button className="back-button">
           <ArrowLeft size={18} color={colorIcons}></ArrowLeft>Go Back
         </button>
         <div className="right">
           {showErase && (
-            <button className="erase">
+            <button className="erase" onClick={() => setShowEraseMsg(true)}>
               <IconDelete
                 width={18}
                 height={18}
@@ -75,7 +127,7 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
             </button>
           )}
           {showArchive && (
-            <button className="archive">
+            <button className="archive" onClick={() => {}}>
               <IconArchive size={18} color={colorIcons}></IconArchive>
             </button>
           )}

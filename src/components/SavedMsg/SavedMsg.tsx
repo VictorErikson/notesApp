@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 interface SavedMsgProps {
   text: string;
-  onClose: () => void; // Add this prop to handle closing
+  onClose: () => void;
 }
 
 const SavedMsg: React.FC<SavedMsgProps> = ({ text, onClose }) => {
@@ -17,7 +17,7 @@ const SavedMsg: React.FC<SavedMsgProps> = ({ text, onClose }) => {
     }, 2000);
 
     const removeTimeout = setTimeout(() => {
-      onClose(); // Hide message after 3s automatically
+      onClose();
     }, 3000);
 
     return () => {
@@ -32,7 +32,6 @@ const SavedMsg: React.FC<SavedMsgProps> = ({ text, onClose }) => {
         <Checkmark size={16} color={"green"} />
         <p>{text}</p>
       </div>
-      {/* Close button to hide the message manually */}
       <button className="close-btn" onClick={onClose}>
         <Cross size={16} color={"gray"} />
       </button>

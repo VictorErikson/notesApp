@@ -8,7 +8,7 @@
         "Dev",
         "React"
       ],
-      "lastEdited": "2025-02-27",
+      "lastEdited": "2025-02-28",
       "text": "Key performance optimization techniques:\n\n1. Code Splitting\n- Use React.lazy() for route-based splitting\n- Implement dynamic imports for heavy components\n\n2. Memoization\n- useMemo for expensive calculations\n- useCallback for function props\n- React.memo for component optimization\n\n3. Virtual List Implementation\n- Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks"
     },
     {
@@ -231,123 +231,6 @@
       "text": "Maximizing daily productivity through better scheduling and focus:\n\n1. Task Prioritization\n- Identify urgent vs. important tasks to tackle first\n- Delegate or eliminate less critical items\n\n2. Blocking Distractions\n- Turn off non-essential notifications\n- Set focused work intervals for deep work\n\n3. Efficient Routines\n- Create a consistent morning ritual\n- Batch repetitive tasks to streamline effort\n\nTODO: Track daily activities for one week to find time leaks"
     },
     {
-      "id": "616c0b46-ea8b-4a01-a571-32fba2dfddc6",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test1 title",
-      "tags": [
-        "test1",
-        "tag2",
-        "tag3"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test1 text aksjhdkjahsdkuhaljsssskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk\n\n\n\n\nasssssssss\n\n\nassssssssss\n\n\n\n\n\n\nassssssssssssssssssssssssssssss\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nassssssssssssssssssssssssssas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nassssssssssssssssssssssssssas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nassssssssssssssssssssssssssas"
-    },
-    {
-      "id": "1ba43784-3c2d-49ba-a763-94ce48f2ab99",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test1",
-      "tags": [
-        "tag1",
-        "tag2"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test1"
-    },
-    {
-      "id": "7779afd1-62d1-4008-b98c-81e76cf2494e",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test2",
-      "tags": [
-        "tag1",
-        "tag2"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test2"
-    },
-    {
-      "id": "cff03e43-6e8f-4499-8be9-2f6f302f511d",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test3",
-      "tags": [
-        "tag1",
-        "tag2"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test3"
-    },
-    {
-      "id": "b3d1795b-fdb2-4474-964d-b867c427316f",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test3",
-      "tags": [
-        "tag1",
-        "tag2"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test3"
-    },
-    {
-      "id": "0d3816c6-324c-4c34-b527-b8cab2bac537",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test4",
-      "tags": [
-        "tag1"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test4"
-    },
-    {
-      "id": "fbdaec7f-e697-4546-846b-5d8285bec9d7",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test5",
-      "tags": [
-        "Add tags separated by commas (e.g. Work",
-        "Planning)"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test5"
-    },
-    {
-      "id": "8638a3ac-bd6e-4cab-8857-d268a82ca065",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test6",
-      "tags": [
-        "tag"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "test5"
-    },
-    {
-      "id": "10361389-844b-4176-b38a-cf02ccb36b07",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "sdf",
-      "tags": [
-        "sdf"
-      ],
-      "lastEdited": "2025-02-03",
-      "text": "sdf"
-    },
-    {
-      "id": "dea81c93-cb18-44d1-a013-959ccc69590c",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test7",
-      "tags": [
-        "tag1"
-      ],
-      "lastEdited": "2025-02-05",
-      "text": "test7"
-    },
-    {
-      "id": "13a6fd8e-b223-400c-90ee-73faec1962a0",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "<br>",
-      "tags": [
-        "dig, h"
-      ],
-      "lastEdited": "2025-02-06",
-      "text": "*Feed dog.<div>&nbsp;-Feed Cat</div><div>&nbsp; &nbsp;-horsr</div><div><br></div><div><br></div>"
-    },
-    {
       "id": "255e3be9-2827-46d7-87a3-88b206f32ce9",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "leathe wipes",
@@ -361,16 +244,6 @@
       "text": "buy wipes \n* ado it agian"
     },
     {
-      "id": "697454ae-73a9-4c23-b492-36bc23f35f9c",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "asdas",
-      "tags": [
-        "asd"
-      ],
-      "lastEdited": "2025-02-06",
-      "text": "asd"
-    },
-    {
       "id": "38b5ee3c-250b-44a4-bc36-6a13503bd347",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "study schedule",
@@ -382,46 +255,15 @@
       "text": "1. wake up\n2. make coffe\n3. start computer, 3.5 - start VSCode\n4. start studying 5. lunch 6. make coffe"
     },
     {
-      "id": "657632c2-8c5b-418b-a282-802c4967f4a7",
+      "id": "bb9aaf53-8fa9-4153-a9ee-d8886edccd9f",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "1",
+      "heading": "party",
       "tags": [
-        "1"
+        "party",
+        "friends"
       ],
-      "lastEdited": "2025-02-27",
-      "text": "1"
-    },
-    {
-      "id": "5ad4a753-7e77-4d31-a056-c38a3cab0082",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "title",
-      "tags": [
-        "tag"
-      ],
-      "lastEdited": "2025-02-27",
-      "text": "text"
-    },
-    {
-      "id": "f9bb1bcc-5211-425e-a868-932e9adc523e",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "new",
-      "tags": [
-        "new",
-        "test",
-        "1"
-      ],
-      "lastEdited": "2025-02-27",
-      "text": "testing"
-    },
-    {
-      "id": "6b0a75ff-c5bc-47cb-af42-b065fc706831",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "1",
-      "tags": [
-        "1"
-      ],
-      "lastEdited": "2025-02-27",
-      "text": "1"
+      "lastEdited": "2025-02-28",
+      "text": "partyplans"
     }
   ],
   "users": [
