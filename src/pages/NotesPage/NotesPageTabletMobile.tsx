@@ -9,12 +9,12 @@ import { Notes } from "../../../public/api/types.ts";
 import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
 
 interface NoteProps {
-  noteId: string;
+  noteId?: string;
+  note: Notes | null;
   setNote: (note: Notes) => void;
-  note: Notes;
 }
 
-const NotesPageTabletMobile = ({ noteId, setNote, note }: NoteProps) => {
+const NotesPageTabletMobile = ({ noteId, note, setNote }: NoteProps) => {
   const [loading, setLoading] = useState(true);
   const [showSavedMsg, setShowSavedMsg] = useState(false);
 
@@ -75,7 +75,6 @@ const NotesPageTabletMobile = ({ noteId, setNote, note }: NoteProps) => {
       </div>
       <MenuBarMobile />
 
-      {/* Show Saved Message with onClose function */}
       {showSavedMsg && (
         <SavedMsg
           text="Note saved successfully!"

@@ -7,11 +7,11 @@ import { Notes } from "../../../public/api/types.ts";
 import "./_Note.scss";
 
 interface NoteProps {
-  setNote: (note: Notes) => void;
   note: Notes;
+  setNote: (note: Notes) => void;
 }
 
-const Note = ({ setNote, note }: NoteProps) => {
+const Note: React.FC<NoteProps> = ({ note, setNote }) => {
   const { mode } = useMode();
   const colorIcons = getComputedStyle(
     document.documentElement

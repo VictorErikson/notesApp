@@ -81,8 +81,6 @@ export const saveNoteFirstTime = async (
     });
 
     if (response.ok) {
-      console.log("Note saved successfully!");
-
       navigate(`/notes/${newNote.id}`, { state: { showSavedMsg: true } });
     } else {
       console.error("Failed to save note");

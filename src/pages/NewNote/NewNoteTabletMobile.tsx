@@ -1,14 +1,9 @@
+import { useState } from "react";
 import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import CreateNewNote from "../../components/CreateNewNote/CreateNewNote";
 import { Notes } from "../../../public/api/types.ts";
-
-// interface Note {
-//   title: string;
-//   tags: string;
-//   text: string;
-// }
 
 interface NewNoteTabletMobileProps {
   note: Notes;
@@ -16,6 +11,8 @@ interface NewNoteTabletMobileProps {
 }
 
 const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
+  const [showSavedMsg, setShowSavedMsg] = useState(false);
+
   return (
     <main className="mainHomeTablet">
       <PageHeaderMobile />
@@ -24,6 +21,7 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
           <NoteTopMenuMobile
             note={note}
             create={true}
+            setShowSavedMsg={setShowSavedMsg}
             showErase={false}
             showArchive={false}
             showRestore={false}

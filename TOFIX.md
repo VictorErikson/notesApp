@@ -1,8 +1,8 @@
 \*FIX Errors:
--cannot save an empty note. alert in services/saveNote.tsx (make into the same error square as "sure you wanna delete?")
--"Failed to fetch users" -error in AllNotesMobile
 
--felmeddelande när skapar ny note
+-re-saving existing note makes tags into one tag
+
+-"Failed to fetch users" -error in AllNotesMobile
 
 \* BUG if user make field empty when editing
 

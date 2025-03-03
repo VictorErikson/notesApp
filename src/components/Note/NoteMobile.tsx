@@ -2,19 +2,20 @@ import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
 import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import Note from "../../components/Note/Note";
+import { Notes } from "../../../public/api/types.ts";
 
-interface Note {
-  id: string;
-  userId: string;
-  heading: string;
-  tags: string[];
-  lastEdited: string;
-  text: string;
-}
+// interface Note {
+//   id: string;
+//   userId: string;
+//   heading: string;
+//   tags: string[];
+//   lastEdited: string;
+//   text: string;
+// }
 
 interface NewNoteTabletMobileProps {
-  note: Note;
-  setNote: (note: Note) => void;
+  note: Notes;
+  setNote: (note: Notes) => void;
 }
 
 const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
@@ -28,8 +29,9 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
             showErase={true}
             showArchive={true}
             showRestore={false}
+            create={false}
           />
-          <Note setNote={setNote} />
+          <Note note={note} setNote={setNote} />
         </div>
       </div>
       <MenuBarMobile />

@@ -9,14 +9,18 @@ import { saveNote, saveNoteFirstTime } from "../../services/saveNote.tsx";
 import { useNavigate } from "react-router-dom";
 import { Notes } from "../../../public/api/types.ts";
 import ErrorMsg from "../ErrorMsg/ErrorMsg.tsx";
+import WarningMsg from "../WarningMsg/WarningMsg.tsx";
+import Iconinfo from "../Images/icon-info.tsx";
+import { ReactNode } from "react";
+import fetchData from "../../services/fetchData.tsx";
 
 interface NoteTopMenuMobileProps {
   note: Notes;
-  create: boolean | null;
+  create: boolean;
   showErase?: boolean;
   showArchive?: boolean;
   showRestore?: boolean;
-  setShowSavedMsg: (value: boolean) => void;
+  setShowSavedMsg?: (value: boolean) => void;
 }
 
 const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
@@ -24,7 +28,7 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
   create,
   showErase,
   showArchive,
-  showRestore,
+  // showRestore,
   setShowSavedMsg,
 }) => {
   const user = useContext(UserContext);
@@ -35,14 +39,52 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     document.documentElement
   ).getPropertyValue(mode === "dark" ? "--Neutral300" : "--Neutral600");
 
+  const [showWarningMsg, setShowWarningMsg] = useState(false);
+  const [textWarning, setTextWarning] = useState("");
+  const [warningTitle, setWarningTitle] = useState("");
+
+  const cancelBtnWarning = (
+    <button className="cancel" onClick={() => setShowWarningMsg(false)}>
+      Continue
+    </button>
+  );
+  const [showDeleteMsg, setShowDeleteMsg] = useState(false);
+  const [deleteTitle, setDeleteTitle] = useState("");
+  const [textDelete, setTextDelete] = useState("");
+  const [imgComponentDelete, setImgComponentDelete] = useState<ReactNode>(null);
+  const [cancelBtn, setCancelBtn] = useState<ReactNode>(null);
+  const [deleteBtn, setDeleteBtn] = useState<ReactNode>(null);
+
   const handleSave = async () => {
+    if (
+      !note ||
+      !note.heading ||
+      !note.text ||
+      !note.tags ||
+      !note.heading.trim() ||
+      !note.text.trim() ||
+      note.heading === "Type here..." ||
+      note.text === "Start typing your note here..." ||
+      note.tags.length === 0 ||
+      note.tags.includes("Add tags separated by commas (e.g. Work")
+    ) {
+      setShowWarningMsg(true);
+      setTextWarning(
+        "Cannot save an empty note. Make sure to add a title, text, and at least one valid tag."
+      );
+      setWarningTitle("Save Note");
+      return;
+    }
+
     if (create) {
       await saveNoteFirstTime(note, user.id, navigate);
     } else {
       await saveNote(note);
     }
-    setShowSavedMsg(true);
-    setTimeout(() => setShowSavedMsg(false), 3000);
+    if (setShowSavedMsg) {
+      setShowSavedMsg(true);
+      setTimeout(() => setShowSavedMsg(false), 3000);
+    }
   };
 
   const deleteNote = async () => {
@@ -63,25 +105,12 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     }
   };
 
-  const [showEraseMsg, setShowEraseMsg] = useState(false);
-  const textDelete =
-    "Are you sure you want to permanently delete this note? This action cannot be undone.";
-  const cancelBtn = (
-    <button className="cancel" onClick={() => setShowEraseMsg(false)}>
-      Cancel
-    </button>
-  );
-  const deleteBtn = (
-    <button className="delete" onClick={() => deleteNote()}>
-      Delete Note
-    </button>
-  );
   const colorDeleteIconWarning = getComputedStyle(
     document.documentElement
   ).getPropertyValue(mode === "dark" ? "--BaseWhite" : "--Neutral950");
 
   useEffect(() => {
-    if (showEraseMsg) {
+    if (showDeleteMsg) {
       document.body.classList.add("modal-active");
     } else {
       document.body.classList.remove("modal-active");
@@ -90,24 +119,32 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     return () => {
       document.body.classList.remove("modal-active");
     };
-  }, [showEraseMsg]);
+  }, [showDeleteMsg]);
 
+  const checkUnchangedNote = async (): Promise<Notes> => {
+    return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+  };
   return (
     <>
-      {showEraseMsg && (
+      {showDeleteMsg && (
         <>
           <ErrorMsg
-            title={"Delete Note"}
+            title={deleteTitle}
             text={textDelete}
-            imgComponent={
-              <IconDelete
-                width={24}
-                height={25}
-                color={colorDeleteIconWarning}
-              />
-            }
+            imgComponent={imgComponentDelete}
             Btn1={cancelBtn}
             Btn2={deleteBtn}
+          />
+          <div className="overlay"></div>
+        </>
+      )}
+      {showWarningMsg && (
+        <>
+          <WarningMsg
+            title={warningTitle}
+            text={textWarning}
+            imgComponent={<Iconinfo size={24} color={colorDeleteIconWarning} />}
+            Btn1={cancelBtnWarning}
           />
           <div className="overlay"></div>
         </>
@@ -118,7 +155,36 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
         </button>
         <div className="right">
           {showErase && (
-            <button className="erase" onClick={() => setShowEraseMsg(true)}>
+            <button
+              className="erase"
+              onClick={() => (
+                setShowDeleteMsg(true),
+                setDeleteTitle("Delete Note"),
+                setTextDelete(
+                  "Are you sure you want to permanently delete this note? This action cannot be undone."
+                ),
+                setImgComponentDelete(
+                  <IconDelete
+                    width={24}
+                    height={25}
+                    color={colorDeleteIconWarning}
+                  />
+                ),
+                setCancelBtn(
+                  <button
+                    className="cancel"
+                    onClick={() => setShowDeleteMsg(false)}
+                  >
+                    Cancel
+                  </button>
+                ),
+                setDeleteBtn(
+                  <button className="delete" onClick={() => deleteNote()}>
+                    Delete Note
+                  </button>
+                )
+              )}
+            >
               <IconDelete
                 width={18}
                 height={18}
@@ -132,7 +198,50 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
             </button>
           )}
 
-          <button className="cancel" onClick={() => {}}>
+          <button
+            className="cancel"
+            onClick={async () => {
+              const unchangedNote: Notes = await checkUnchangedNote();
+              console.log(unchangedNote.tags, note.tags);
+              if (
+                unchangedNote.heading !== note.heading ||
+                // JSON.stringify(unchangedNote.tags) !==
+                //   JSON.stringify(note.tags) ||
+                unchangedNote.text !== note.text
+              ) {
+                setShowDeleteMsg(true);
+                setDeleteTitle("Are you sure you want to cancel?");
+                setTextDelete(
+                  "Any unsaved data will be deleted. This action cannot be undone."
+                );
+                setImgComponentDelete(
+                  <Iconinfo size={24} color={colorDeleteIconWarning} />
+                );
+
+                setCancelBtn(
+                  <button
+                    className="continue"
+                    onClick={() => {
+                      setShowDeleteMsg(false);
+                      navigate("/");
+                    }}
+                  >
+                    Yes, continue
+                  </button>
+                );
+                setDeleteBtn(
+                  <button
+                    className="delete"
+                    onClick={() => setShowDeleteMsg(false)}
+                  >
+                    No, return
+                  </button>
+                );
+              } else {
+                navigate("/");
+              }
+            }}
+          >
             Cancel
           </button>
           <button className="save" onClick={handleSave}>
@@ -146,43 +255,3 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
 };
 
 export default NoteTopMenuMobile;
-
-// //Fix this alert
-// const saveNote = async () => {
-//   if (
-//     !note.title.trim() ||
-//     !note.text.trim() ||
-//     note.title === "Type here..." ||
-//     note.text === "Start typing your note here..."
-//   ) {
-//     alert("cannot save an empty note.");
-//     return;
-//   }
-
-//   const id = user.id;
-
-//   const newNote = {
-//     noteId: uuidv4(),
-//     userId: id,
-//     heading: note.title,
-//     tags: note.tags.split(",").map((tag) => tag.trim()),
-//     lastEdited: new Intl.DateTimeFormat("sv-SE").format(new Date()),
-//     text: note.text,
-//   };
-
-//   try {
-//     const response = await fetch("http://localhost:5000/notes", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(newNote),
-//     });
-
-//     if (response.ok) {
-//       console.log("Note saved successfully!");
-//     } else {
-//       console.error("Failed to save note");
-//     }
-//   } catch (error) {
-//     console.error("Error saving note:", error);
-//   }
-// };
