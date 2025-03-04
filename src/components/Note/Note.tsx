@@ -54,9 +54,12 @@ const Note: React.FC<NoteProps> = ({ note, setNote }) => {
           onBlur={(e) => {
             const element = e.currentTarget;
             setTimeout(() => {
+              const newTags = element.innerHTML
+                .split(",")
+                .map((tag) => tag.trim());
               setEditableNote((prev) => ({
                 ...prev,
-                tags: [element.innerHTML],
+                tags: newTags,
               }));
             }, 0);
           }}

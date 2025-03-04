@@ -150,7 +150,49 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
         </>
       )}
       <div className="noteTopMenuMobile">
-        <button className="back-button">
+        <button
+          className="back-button"
+          onClick={async () => {
+            const unchangedNote: Notes = await checkUnchangedNote();
+            if (
+              unchangedNote.heading !== note.heading ||
+              JSON.stringify(unchangedNote.tags) !==
+                JSON.stringify(note.tags) ||
+              unchangedNote.text !== note.text
+            ) {
+              setShowDeleteMsg(true);
+              setDeleteTitle("Are you sure you want to go back?");
+              setTextDelete(
+                "Any unsaved data will be deleted. This action cannot be undone."
+              );
+              setImgComponentDelete(
+                <Iconinfo size={24} color={colorDeleteIconWarning} />
+              );
+
+              setCancelBtn(
+                <button
+                  className="continue"
+                  onClick={() => {
+                    setShowDeleteMsg(false);
+                    navigate("/");
+                  }}
+                >
+                  Yes, continue
+                </button>
+              );
+              setDeleteBtn(
+                <button
+                  className="delete"
+                  onClick={() => setShowDeleteMsg(false)}
+                >
+                  No, return
+                </button>
+              );
+            } else {
+              navigate("/");
+            }
+          }}
+        >
           <ArrowLeft size={18} color={colorIcons}></ArrowLeft>Go Back
         </button>
         <div className="right">
@@ -202,11 +244,10 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
             className="cancel"
             onClick={async () => {
               const unchangedNote: Notes = await checkUnchangedNote();
-              console.log(unchangedNote.tags, note.tags);
               if (
                 unchangedNote.heading !== note.heading ||
-                // JSON.stringify(unchangedNote.tags) !==
-                //   JSON.stringify(note.tags) ||
+                JSON.stringify(unchangedNote.tags) !==
+                  JSON.stringify(note.tags) ||
                 unchangedNote.text !== note.text
               ) {
                 setShowDeleteMsg(true);
@@ -244,7 +285,22 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           >
             Cancel
           </button>
-          <button className="save" onClick={handleSave}>
+          <button
+            className="save"
+            onClick={async () => {
+              const unchangedNote: Notes = await checkUnchangedNote();
+              if (
+                unchangedNote.heading === note.heading &&
+                JSON.stringify(unchangedNote.tags) ===
+                  JSON.stringify(note.tags) &&
+                unchangedNote.text === note.text
+              ) {
+                return;
+              } else {
+                handleSave();
+              }
+            }}
+          >
             Save Note
           </button>
         </div>

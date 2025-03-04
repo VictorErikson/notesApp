@@ -27,6 +27,7 @@ body.dark {
             background: $Neutral950;
             border: 1px solid $Neutral600; 
         }
+        border-bottom: 1px solid $Neutral800;
     }
    
 
@@ -42,6 +43,7 @@ body.dark {
     border-bottom: 1px solid $Neutral200;
     height: fit-content;
     width: 100%;
+    box-sizing: border-box;
 
     .search {
         display: flex;

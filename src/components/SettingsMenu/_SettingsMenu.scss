@@ -8,11 +8,12 @@
     gap: 16px;
     border-right: 1px solid $Neutral200;
     width: fit-content;
-    height: 100vh;
-    
+    min-height: 100vh;
+    box-sizing: border-box;
 
     .logo{
         padding: 12px 0px;
+        flex-shrink: 0;
     }
 
     .content{
@@ -63,3 +64,14 @@
     
 }
 
+body.dark{
+    .sidebar{
+        border-right: 1px solid $Neutral800;
+
+        .content{
+            hr{
+                background-color: $Neutral800;
+            }
+        }
+    }
+}

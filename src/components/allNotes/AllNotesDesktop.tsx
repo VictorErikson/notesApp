@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from "react";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
 import { UserContext } from "../../context/AuthContext.tsx";
-import IconPlus from "../Images/icon-plus.tsx";
 import { useNavigate } from "react-router-dom";
 
 const formatDate = (dateString: string) => {
@@ -76,9 +75,14 @@ const AllNotesMobile = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="notesBackground">
+    <div className="notesBackground, desktop">
       <div className="allNotes">
-        <h2>All Notes</h2>
+        <button
+          onClick={() => navigate("/notes/new")}
+          className="create-note-desktop"
+        >
+          + Create New Note
+        </button>
         <div className="notes-container">
           {notes.length > 0 ? (
             notes.map((note) => <NoteCard key={note.id} note={note} />)
@@ -92,9 +96,6 @@ const AllNotesMobile = () => {
             </div>
           )}
         </div>
-        <button onClick={() => navigate("/notes/new")} className="create-note">
-          <IconPlus size={32} color={"#FFF"}></IconPlus>
-        </button>
       </div>
     </div>
   );

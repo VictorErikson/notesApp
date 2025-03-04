@@ -1,7 +1,7 @@
 @use "../../../partials/mixins" as mixins;
 @import '../../../partials/variables';
 
-.allNotesMobile{
+.allNotes{
     display: flex;
     flex-direction: column;
     padding: 20px 16px;
@@ -131,11 +131,41 @@
 
 }
 
+.desktop{
+    max-width: 290px;
+    
+
+    .allNotes{
+        padding: 20px 16px 0px 32px;
+        border-right: 1px solid $Neutral200;
+        min-height: 617.8px;
+        height: calc(100vh - 81.19px);
+
+        .create-note-desktop{
+            background: $Blue500;
+            border-radius: 8px;
+            padding: 12px 16px;
+            cursor: pointer;
+            
+            &:hover{
+
+            }
+        }
+        .notes-container{
+
+        }
+
+        h3{
+            text-align: left;
+        }
+    }
+}
+
 body.light {
     .notesBackground{
         background: $Neutral100;
     }
-    .allNotesMobile{
+    .allNotes{
         background: $BaseWhite;
         color: $Neutral950;
         hr {
@@ -174,7 +204,7 @@ body.dark {
     .notesBackground{
         background: $Neutral800;
     }
-    .allNotesMobile{
+    .allNotes{
         background: $Neutral950;
         color: $BaseWhite;
         hr {
@@ -204,6 +234,10 @@ body.dark {
             color: $Neutral300;
         }
     }
-   
+    .desktop{
+        .allNotes{
+            border-right: 1px solid $Neutral800;
+        }
+    }
 
 }

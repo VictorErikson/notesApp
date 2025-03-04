@@ -27,9 +27,10 @@
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "Favorite Pasta Recipes",
       "tags": [
-        "Cooking, Recipes"
+        "Cooking",
+        "Recipes"
       ],
-      "lastEdited": "2025-02-27",
+      "lastEdited": "2025-03-04",
       "text": "My go-to pasta recipes for quick and delicious meals:\n\n1. Classic Carbonara\n- Ingredients: eggs, parmesan, pancetta, black pepper\n- Key technique: mix eggs and cheese off heat to avoid scrambling\n\n2. Pesto Pasta\n- Blend fresh basil, garlic, pine nuts, and olive oil\n- Toss with cooked pasta and cherry tomatoes\n\n3. Spicy Arrabbiata\n- Use crushed tomatoes, garlic, and red chili flakes\n- Simmer sauce for 15 minutes for rich flavor\n\nTODO: Try homemade pasta-making techniques"
     },
     {
@@ -231,19 +232,6 @@
       "text": "Maximizing daily productivity through better scheduling and focus:\n\n1. Task Prioritization\n- Identify urgent vs. important tasks to tackle first\n- Delegate or eliminate less critical items\n\n2. Blocking Distractions\n- Turn off non-essential notifications\n- Set focused work intervals for deep work\n\n3. Efficient Routines\n- Create a consistent morning ritual\n- Batch repetitive tasks to streamline effort\n\nTODO: Track daily activities for one week to find time leaks"
     },
     {
-      "id": "255e3be9-2827-46d7-87a3-88b206f32ce9",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "leathe wipes",
-      "tags": [
-        "1",
-        "2",
-        "5",
-        "gurka"
-      ],
-      "lastEdited": "2025-02-06",
-      "text": "buy wipes \n* ado it agian"
-    },
-    {
       "id": "38b5ee3c-250b-44a4-bc36-6a13503bd347",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "study schedule",
@@ -255,34 +243,16 @@
       "text": "1. wake up\n2. make coffe\n3. start computer, 3.5 - start VSCode\n4. start studying 5. lunch 6. make coffe"
     },
     {
-      "id": "bb9aaf53-8fa9-4153-a9ee-d8886edccd9f",
+      "id": "83c8d07c-bead-4523-9cbc-5627f704bf2b",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "heading": "party",
       "tags": [
-        "party, friends, social"
+        "friends",
+        "social",
+        "fiesta"
       ],
-      "lastEdited": "2025-03-03",
-      "text": "<br>"
-    },
-    {
-      "id": "ff56764b-71dc-4da5-9079-e8fd5b54f742",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "1",
-      "tags": [
-        "1, 2, 3"
-      ],
-      "lastEdited": "2025-03-03",
-      "text": "1"
-    },
-    {
-      "id": "f7787e7d-cf22-4281-a734-5c3fa41a05f3",
-      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
-      "heading": "test",
-      "tags": [
-        "1, 2, 3, 4"
-      ],
-      "lastEdited": "2025-03-03",
-      "text": "1"
+      "lastEdited": "2025-03-04",
+      "text": "party"
     }
   ],
   "users": [
