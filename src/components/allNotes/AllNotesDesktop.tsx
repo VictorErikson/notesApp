@@ -16,8 +16,15 @@ const formatDate = (dateString: string) => {
     year: "numeric",
   });
 };
+// interface NoteProps {
+//   note?: Notes;
+//   setNote?: (note: Notes) => void;
+// }
+
+
 
 const AllNotesMobile = () => {
+  // const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   const [notes, setNotes] = useState<Notes[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -85,7 +92,8 @@ const AllNotesMobile = () => {
         </button>
         <div className="notes-container">
           {notes.length > 0 ? (
-            notes.map((note) => <NoteCard key={note.id} note={note} />)
+            // notes.map((note) => <NoteCard key={note.id} note={note} setNote={setNote}/>)
+            notes.map((note) => <NoteCard key={note.id} note={note}/>)
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
@@ -101,14 +109,18 @@ const AllNotesMobile = () => {
   );
 };
 
+// const NoteCard: React.FC<{ note: Notes, setNote: (note: Notes) => void;}> = ({ note, setNote }) => {
 const NoteCard: React.FC<{ note: Notes }> = ({ note }) => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
   return (
     <>
       <button
         className="note-card"
-        onClick={() => navigate(`/notes/${note.id}`)}
+        onClick={() => {
+          // setNote(note);
+          navigate(`/notes/${note.id}`);
+        }}
       >
         <h3>{note.heading}</h3>
         <div className="tags">

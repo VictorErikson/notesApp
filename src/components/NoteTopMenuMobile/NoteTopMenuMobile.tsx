@@ -121,9 +121,16 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     };
   }, [showDeleteMsg]);
 
-  const checkUnchangedNote = async (): Promise<Notes> => {
-    return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
-  };
+    const checkUnchangedNote = async (): Promise<Notes> => {
+      return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+    }
+
+    // if (!create){
+  //   const checkUnchangedNote = async (): Promise<Notes> => {
+  //     return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+  //   }
+  //   return checkUnchangedNote;
+  // }
   return (
     <>
       {showDeleteMsg && (
@@ -153,7 +160,15 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
         <button
           className="back-button"
           onClick={async () => {
+            
             const unchangedNote: Notes = await checkUnchangedNote();
+            
+            // if (create){
+            //   const unchangedNote: Notes = await checkUnchangedNote();
+            // } else {
+            //   const unchangedNote: Notes = ;
+            // }
+
             if (
               unchangedNote.heading !== note.heading ||
               JSON.stringify(unchangedNote.tags) !==

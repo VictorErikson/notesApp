@@ -36,7 +36,7 @@ const HomeDesktop = () => {
           /> */}
           {/* {creatingNewNote && <NewNote />}
           {selectedNote && <Note note={selectedNote} />} */}
-          {/* <ChangeModeBtn /> */}
+          <ChangeModeBtn />
         </div>
       </main>
     </div>

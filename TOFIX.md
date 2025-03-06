@@ -1,5 +1,18 @@
 \*FIX Errors:
 
+-fix cancel, save and back functions on new note mobile
+        (problemet är i NoteTopMenuMobile att jag checkar "unchanged note" alltså hur en note med samma ID i DB ser ut. i new note finns ingen note med detta id. så behöver typ if-statement för att se om "!create" så skippas dessa steg, detta finns påbörjat i utkommenterat)
+
+-wrong color on the date-text at notes in edit daymode
+-wrong color on tags in note, edit, darkmode
+
+-fix so "loading content" doesnt blink by when screen-width changes
+
+
+-when click on another note in desktop do it update state so note changes
+
+-fix so components that doesnt change are outside route so they dont have to re-render?
+
 -re-saving existing note makes tags into one tag
 
 -"Failed to fetch users" -error in AllNotesMobile

@@ -1,0 +1,23 @@
+@use "../../../partials/mixins" as mixins;
+@import '../../../partials/variables';
+
+
+// .NotesPageDesktop{
+//     .newNote-container{
+//         padding: 20px 24px;
+//     }
+// }
+.newNote-container{
+    hr{
+        border: none;
+        height: 1px;
+        background-color: $Neutral200;
+    } 
+}
+body.dark{
+    .newNote-container{
+        hr{
+            background-color: $Neutral800;
+        } 
+    }
+}

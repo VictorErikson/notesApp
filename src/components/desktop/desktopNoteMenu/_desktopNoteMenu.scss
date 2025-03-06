@@ -1,0 +1,35 @@
+@use "../../../../partials/mixins" as mixins;
+@import '../../../../partials/variables';
+
+.desktopNoteMenu{
+    display: flex;
+    gap: 16px;
+
+    button{
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .save{
+        color: $BaseWhite;
+        background: $Blue500;
+
+    }
+    .cancel{
+        color: $Neutral600;
+        background: $Neutral100;
+    }
+}
+
+body.dark {
+    .desktopNoteMenu{
+
+
+        .cancel{
+            color: $Neutral400;
+            background: $Neutral800;
+        }
+    }
+    
+}

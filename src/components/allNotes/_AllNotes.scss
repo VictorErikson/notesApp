@@ -138,15 +138,18 @@
     .allNotes{
         padding: 20px 16px 0px 32px;
         border-right: 1px solid $Neutral200;
-        min-height: 617.8px;
+        // min-height: 617.8px;
         height: calc(100vh - 81.19px);
+        width: 290px;
+        box-sizing: border-box;
 
         .create-note-desktop{
             background: $Blue500;
             border-radius: 8px;
             padding: 12px 16px;
             cursor: pointer;
-            
+            color: $BaseWhite;
+
             &:hover{
 
             }
