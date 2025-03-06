@@ -121,16 +121,8 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     };
   }, [showDeleteMsg]);
 
-    const checkUnchangedNote = async (): Promise<Notes> => {
-      return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
-    }
+  let unchangedNote:Notes
 
-    // if (!create){
-  //   const checkUnchangedNote = async (): Promise<Notes> => {
-  //     return await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
-  //   }
-  //   return checkUnchangedNote;
-  // }
   return (
     <>
       {showDeleteMsg && (
@@ -161,14 +153,15 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           className="back-button"
           onClick={async () => {
             
-            const unchangedNote: Notes = await checkUnchangedNote();
-            
-            // if (create){
-            //   const unchangedNote: Notes = await checkUnchangedNote();
-            // } else {
-            //   const unchangedNote: Notes = ;
-            // }
-
+            if (!create){
+              unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+            } else {
+              unchangedNote = {
+                heading: "",
+                text: "",
+                tags: [],
+              };
+            }
             if (
               unchangedNote.heading !== note.heading ||
               JSON.stringify(unchangedNote.tags) !==
@@ -258,7 +251,15 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           <button
             className="cancel"
             onClick={async () => {
-              const unchangedNote: Notes = await checkUnchangedNote();
+              if (!create){
+                unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+              } else {
+                unchangedNote = {
+                  heading: "",
+                  text: "",
+                  tags: [],
+                };
+              }
               if (
                 unchangedNote.heading !== note.heading ||
                 JSON.stringify(unchangedNote.tags) !==
@@ -303,7 +304,15 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           <button
             className="save"
             onClick={async () => {
-              const unchangedNote: Notes = await checkUnchangedNote();
+              if (!create){
+                unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+              } else {
+                unchangedNote = {
+                  heading: "",
+                  text: "",
+                  tags: [],
+                };
+              }
               if (
                 unchangedNote.heading === note.heading &&
                 JSON.stringify(unchangedNote.tags) ===
