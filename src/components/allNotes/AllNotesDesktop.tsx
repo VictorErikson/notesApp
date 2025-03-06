@@ -1,6 +1,4 @@
 import "./_AllNotes.scss";
-// import { useMode } from "../../context/ModeContext.tsx";
-// import localforage from "localforage";
 import { useState, useEffect, useContext } from "react";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
@@ -16,15 +14,15 @@ const formatDate = (dateString: string) => {
     year: "numeric",
   });
 };
-// interface NoteProps {
-//   note?: Notes;
-//   setNote?: (note: Notes) => void;
-// }
+interface NoteProps {
+  note?: Notes;
+  setNote?: (note: Notes) => void;
+}
 
 
 
-const AllNotesMobile = () => {
-  // const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
+// const AllNotesMobile = () => {
+const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   const [notes, setNotes] = useState<Notes[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -92,8 +90,7 @@ const AllNotesMobile = () => {
         </button>
         <div className="notes-container">
           {notes.length > 0 ? (
-            // notes.map((note) => <NoteCard key={note.id} note={note} setNote={setNote}/>)
-            notes.map((note) => <NoteCard key={note.id} note={note}/>)
+            notes.map((note) => <NoteCard key={note.id} note={note} setNote={setNote}/>)
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
@@ -109,8 +106,7 @@ const AllNotesMobile = () => {
   );
 };
 
-// const NoteCard: React.FC<{ note: Notes, setNote: (note: Notes) => void;}> = ({ note, setNote }) => {
-const NoteCard: React.FC<{ note: Notes }> = ({ note }) => {
+const NoteCard: React.FC<{ note: Notes, setNote: (note: Notes) => void;}> = ({ note, setNote }) => {
 const navigate = useNavigate();
 
   return (
@@ -118,7 +114,9 @@ const navigate = useNavigate();
       <button
         className="note-card"
         onClick={() => {
-          // setNote(note);
+          if (setNote) {
+            setNote(note);
+          } 
           navigate(`/notes/${note.id}`);
         }}
       >

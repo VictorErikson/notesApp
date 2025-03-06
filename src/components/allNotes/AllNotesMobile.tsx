@@ -1,6 +1,4 @@
 import "./_AllNotes.scss";
-// import { useMode } from "../../context/ModeContext.tsx";
-// import localforage from "localforage";
 import { useState, useEffect, useContext } from "react";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
@@ -18,7 +16,12 @@ const formatDate = (dateString: string) => {
   });
 };
 
-const AllNotesMobile = () => {
+interface NoteProps {
+  note?: Notes;
+  setNote?: (note: Notes) => void;
+}
+
+const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   const [notes, setNotes] = useState<Notes[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -81,7 +84,7 @@ const AllNotesMobile = () => {
         <h2>All Notes</h2>
         <div className="notes-container">
           {notes.length > 0 ? (
-            notes.map((note) => <NoteCard key={note.id} note={note} />)
+            notes.map((note) => <NoteCard key={note.id} note={note} setNote={setNote}/>)
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
@@ -100,14 +103,19 @@ const AllNotesMobile = () => {
   );
 };
 
-const NoteCard: React.FC<{ note: Notes }> = ({ note }) => {
+const NoteCard: React.FC<{ note: Notes, setNote?: (note: Notes) => void; }> = ({ note, setNote }) => {
   const navigate = useNavigate();
 
   return (
     <>
       <button
         className="note-card"
-        onClick={() => navigate(`/notes/${note.id}`)}
+        onClick={() => {
+          if (setNote) {
+            setNote(note);
+          } 
+          navigate(`/notes/${note.id}`);
+        }}
       >
         <h3>{note.heading}</h3>
         <div className="tags">

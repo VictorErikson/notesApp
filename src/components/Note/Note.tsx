@@ -20,6 +20,10 @@ const Note: React.FC<NoteProps> = ({ note, setNote }) => {
   const [editableNote, setEditableNote] = useState<Notes>(note);
 
   useEffect(() => {
+    setEditableNote(note)
+  }, [note]);
+
+  useEffect(() => {
     setNote(editableNote);
   }, [editableNote, setNote]);
 

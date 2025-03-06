@@ -65,7 +65,7 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
       <main className="NotesPageDesktop">
         <PageDesktopHeader page={"All Notes"} />
         <div className="notesContainer">
-          <AllNotesDesktop />
+          <AllNotesDesktop setNote={setNote} note={note} />
           <div className="notes">
             <Note setNote={setNote} note={note} />
             <hr></hr>
