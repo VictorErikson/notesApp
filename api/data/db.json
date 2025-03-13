@@ -1,0 +1,281 @@
+{
+  "notes": [
+    {
+      "id": "7332dc99-7ce7-4e81-a063-6baa504ad54f",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "React Performance Optimization",
+      "tags": [
+        "Dev",
+        "React"
+      ],
+      "lastEdited": "2025-02-28",
+      "text": "Key performance optimization techniques:\n\n1. Code Splitting\n- Use React.lazy() for route-based splitting\n- Implement dynamic imports for heavy components\n\n2. Memoization\n- useMemo for expensive calculations\n- useCallback for function props\n- React.memo for component optimization\n\n3. Virtual List Implementation\n- Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks"
+    },
+    {
+      "id": "1faf8bd8-88c4-4d42-a88f-673f3c910af0",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Japan Travel Planning",
+      "tags": [
+        "Travel",
+        "Personal"
+      ],
+      "lastEdited": "2024-10-28",
+      "text": "Steps for planning my Japan trip:\n\n1. Destination List\n- Tokyo (Shinjuku, Akihabara, Harajuku)\n- Kyoto (Fushimi Inari, Kinkaku-ji)\n- Osaka (Dotonbori, Universal Studios Japan)\n\n2. Budgeting & Accommodation\n- Set daily budget for food, transport, and activities\n- Compare hotels vs Airbnb for cost-effectiveness\n\n3. Transportation\n- Get a Japan Rail Pass for long-distance travel\n- Plan subway routes for city navigation\n\nTODO: Finalize itinerary and book accommodations"
+    },
+    {
+      "id": "a09e2efd-0dc4-47a7-8f75-0bd04aa7f216",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Favorite Pasta Recipes",
+      "tags": [
+        "Cooking",
+        "Recipes"
+      ],
+      "lastEdited": "2025-03-04",
+      "text": "My go-to pasta recipes for quick and delicious meals:\n\n1. Classic Carbonara\n- Ingredients: eggs, parmesan, pancetta, black pepper\n- Key technique: mix eggs and cheese off heat to avoid scrambling\n\n2. Pesto Pasta\n- Blend fresh basil, garlic, pine nuts, and olive oil\n- Toss with cooked pasta and cherry tomatoes\n\n3. Spicy Arrabbiata\n- Use crushed tomatoes, garlic, and red chili flakes\n- Simmer sauce for 15 minutes for rich flavor\n\nTODO: Try homemade pasta-making techniques"
+    },
+    {
+      "id": "538c23ea-51ef-43a7-a3f2-e43fd66cb630",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Weekly Workout Plan",
+      "tags": [
+        "Dev",
+        "React"
+      ],
+      "lastEdited": "2024-10-25",
+      "text": "A structured weekly workout plan for strength and endurance:\n\n1. Strength Training\n- Monday: Upper body (bench press, rows, curls)\n- Wednesday: Lower body (squats, lunges, deadlifts)\n- Friday: Core & functional exercises\n\n2. Cardio & Mobility\n- Tuesday: HIIT session (sprints, burpees, jump squats)\n- Thursday: 5k run with progressive pace\n- Sunday: Yoga & stretching for recovery\n\nTODO: Track progress and adjust intensity as needed"
+    },
+    {
+      "id": "07399161-dada-48ad-8760-ec33a1aa3e93",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Meal Prep Ideas",
+      "tags": [
+        "Cooking",
+        "Health"
+      ],
+      "lastEdited": "2024-10-12",
+      "text": "Healthy and efficient meal prep for the week:\n\n1. Breakfast Options\n- Overnight oats with fruits and nuts\n- Scrambled eggs with spinach and feta\n\n2. Lunch & Dinner Prep\n- Grilled chicken with quinoa and roasted veggies\n- Chickpea salad with lemon-tahini dressing\n\n3. Snack Planning\n- Greek yogurt with honey\n- Hummus with sliced cucumbers and carrots\n\nTODO: Experiment with new high-protein recipes"
+    },
+    {
+      "id": "7b76c63c-1270-4f5e-a3a3-c9d668bd4174",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Reading List",
+      "tags": [
+        "Personal",
+        "Dev"
+      ],
+      "lastEdited": "2024-10-05",
+      "text": "A curated list of books to read across different genres:\n\n1. Fiction\n- 'The Midnight Library' by Matt Haig\n- 'Project Hail Mary' by Andy Weir\n\n2. Non-Fiction\n- 'Atomic Habits' by James Clear (productivity)\n- 'Sapiens' by Yuval Noah Harari (history)\n\n3. Technical Books\n- 'You Don’t Know JS' series by Kyle Simpson\n- 'Refactoring UI' by Adam Wathan & Steve Schoger\n\nTODO: Set monthly reading goals and take notes"
+    },
+    {
+      "id": "f708002d-c755-4aeb-ae73-c6058f1f613f",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "Fitness Goals 2025",
+      "tags": [
+        "Personal",
+        "Health"
+      ],
+      "lastEdited": "2023-11-05",
+      "text": "Setting achievable fitness goals for 2025:\n\n1. Strength Targets\n- Squat: 2x body weight\n- Deadlift: 2.5x body weight\n- Bench press: 1.5x body weight\n\n2. Endurance Goals\n- Complete a half-marathon in under 2 hours\n- Improve cycling stamina for long rides\n\n3. Daily Habits\n- Track macros and maintain balanced nutrition\n- Aim for 8,000+ steps per day\n\nTODO: Create a detailed training schedule"
+    },
+    {
+      "id": "3cbfe430-9350-4348-8c45-6247c7b2986b",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Photography Tips",
+      "tags": [
+        "Hobby",
+        "Photography"
+      ],
+      "lastEdited": "2024-09-22",
+      "text": "Improving photography skills and capturing better shots:\n\n1. Lighting Fundamentals\n- Use soft natural light for portraits\n- Experiment with reflectors to control shadows\n\n2. Composition Techniques\n- Rule of thirds for balanced framing\n- Leading lines to guide the viewer’s eye\n\n3. Camera Settings\n- Master aperture, shutter speed, and ISO\n- Use manual mode for complete control\n\nTODO: Practice night photography and compare lens types"
+    },
+    {
+      "id": "6c675cab-c78c-441b-947b-99cc4cd1a243",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Financial Planning 2024",
+      "tags": [
+        "Finance",
+        "Personal"
+      ],
+      "lastEdited": "2024-08-10",
+      "text": "Creating a detailed financial strategy for the upcoming year:\n\n1. Budgeting\n- Track monthly expenses to spot unnecessary costs\n- Allocate money into needs, wants, and savings\n\n2. Investment Portfolio\n- Research index funds and government bonds\n- Diversify to reduce risk across different asset classes\n\n3. Emergency Fund\n- Aim for at least six months of living expenses\n- Store in a high-yield savings account for liquidity\n\nTODO: Schedule a quarterly review of all finances"
+    },
+    {
+      "id": "f0e0da1f-3c1a-44ac-88e8-153312e8a4b0",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "DIY Home Projects",
+      "tags": [
+        "Home Improvement",
+        "Hobby"
+      ],
+      "lastEdited": "2024-07-15",
+      "text": "Simple projects to enhance living spaces and learn new skills:\n\n1. Building Shelves\n- Measure walls precisely before cutting\n- Use quality wood or sturdy metal frames\n\n2. Fixing Appliances\n- Diagnose common issues with small electronics\n- Safely replace parts with proper tools\n\n3. Painting Walls\n- Prep surfaces and use primer for even coverage\n- Experiment with accent walls for a bold look\n\nTODO: Explore upcycling old furniture for sustainable decor"
+    },
+    {
+      "id": "4d25b4df-81b9-4ae5-bace-5e5ea3b3a189",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Music Production Basics",
+      "tags": [
+        "Music",
+        "Creative"
+      ],
+      "lastEdited": "2024-06-30",
+      "text": "Getting started with digital audio workstations and mixing:\n\n1. DAW Selection\n- Consider Reaper, Ableton, or FL Studio\n- Look for intuitive interfaces and plugin support\n\n2. Recording Techniques\n- Use a decent microphone for clear vocals\n- Maintain proper gain levels to avoid clipping\n\n3. Mixing Essentials\n- Balance volume, panning, and EQ for clarity\n- Add reverb or compression cautiously\n\nTODO: Experiment with MIDI instruments and layering multiple tracks"
+    },
+    {
+      "id": "879b5317-85ff-464c-8830-03f09f5f10ef",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Learning Spanish",
+      "tags": [
+        "Languages",
+        "Personal Growth"
+      ],
+      "lastEdited": "2024-06-15",
+      "text": "Strategies to pick up Spanish skills effectively:\n\n1. Daily Practice\n- Use language apps for quick vocab exercises\n- Listen to Spanish podcasts or music\n\n2. Grammar Foundations\n- Focus on verb conjugations early\n- Pay attention to gendered nouns\n\n3. Immersion Methods\n- Watch shows with Spanish subtitles\n- Practice small talk with native speakers\n\nTODO: Schedule a weekly conversation with a language exchange partner"
+    },
+    {
+      "id": "3f956ea4-af93-42ca-951f-286c02549020",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Camping Essentials",
+      "tags": [
+        "Outdoor",
+        "Adventure"
+      ],
+      "lastEdited": "2024-05-28",
+      "text": "Planning a safe and enjoyable camping trip:\n\n1. Gear Checklist\n- Tent, sleeping bag, inflatable mat\n- Flashlights, camp stove, and basic tools\n\n2. Food & Water\n- Pack non-perishables and easy-cook meals\n- Carry water filters or purification tablets\n\n3. Safety Precautions\n- Know local wildlife and regulations\n- Keep a first-aid kit handy for emergencies\n\nTODO: Research new hiking trails and backcountry regulations"
+    },
+    {
+      "id": "c7eaddd8-7c4b-439d-9165-2e1f9918eb7a",
+      "userId": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "heading": "Car Maintenance Guide",
+      "tags": [
+        "Auto",
+        "Practical"
+      ],
+      "lastEdited": "2024-05-10",
+      "text": "Fundamental tips for keeping your vehicle in top shape:\n\n1. Routine Checks\n- Inspect fluid levels (oil, coolant, brake fluid)\n- Maintain recommended tire pressure\n\n2. Basic Repairs\n- Replace windshield wipers and light bulbs regularly\n- Change air filters to improve engine performance\n\n3. Scheduled Servicing\n- Follow the manufacturer’s maintenance intervals\n- Use certified mechanics for major repairs\n\nTODO: Create a calendar reminder for oil changes every 5,000 miles"
+    },
+    {
+      "id": "bfac597b-536f-4af9-b656-cf161b8dbb4a",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Yoga for Beginners",
+      "tags": [
+        "Wellness",
+        "Fitness"
+      ],
+      "lastEdited": "2024-09-18",
+      "text": "A gentle approach to building a regular yoga routine:\n\n1. Foundational Poses\n- Mountain pose for posture alignment\n- Downward dog to stretch hamstrings\n\n2. Breathing Techniques\n- Inhale deeply for energy\n- Use slow exhales to release tension\n\n3. Consistency\n- Short daily sessions rather than infrequent long ones\n- Combine with meditation for mental clarity\n\nTODO: Try a 14-day beginner challenge and record flexibility gains"
+    },
+    {
+      "id": "16657aea-9994-455b-9681-2fbe888b0886",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Self-Improvement Books",
+      "tags": [
+        "Personal Growth",
+        "Reading"
+      ],
+      "lastEdited": "2024-08-22",
+      "text": "Recommended reads for personal transformation and motivation:\n\n1. Goal Setting\n- 'Atomic Habits' for habit-building frameworks\n- 'Start with Why' for finding purpose\n\n2. Mindset Shifts\n- 'Mindset' by Carol Dweck to foster a growth mentality\n- 'The Power of Now' for present-moment awareness\n\n3. Effective Reading\n- Take notes or highlight key lessons\n- Reflect on how to apply ideas to daily life\n\nTODO: Schedule weekly reading sessions and track progress"
+    },
+    {
+      "id": "d7ec0359-52dc-4fe1-be88-f611d092dba5",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Home Gardening Guide",
+      "tags": [
+        "Gardening",
+        "Hobby"
+      ],
+      "lastEdited": "2024-07-30",
+      "text": "Cultivating a lush garden with simple, sustainable methods:\n\n1. Soil Preparation\n- Test pH levels and add compost if needed\n- Turn soil to aerate and remove weeds\n\n2. Plant Selection\n- Choose local varieties suited to your climate\n- Mix annuals and perennials for year-round color\n\n3. Watering & Maintenance\n- Water deeply in the morning\n- Use natural pest control to avoid harsh chemicals\n\nTODO: Experiment with container gardening for herbs and small vegetables"
+    },
+    {
+      "id": "8097ab10-fb8b-44de-b79f-f2f29ac8db12",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Meditation Practices",
+      "tags": [
+        "Wellness",
+        "Mindfulness"
+      ],
+      "lastEdited": "2024-07-05",
+      "text": "Techniques to cultivate inner peace and mental clarity:\n\n1. Breathing Meditation\n- Focus on inhales and exhales to anchor the mind\n- Gently return to the breath when distracted\n\n2. Body Scan\n- Check each body part for tension\n- Release stress by visualizing relaxation\n\n3. Loving-Kindness\n- Send positive intentions to yourself and others\n- Foster compassion and empathy\n\nTODO: Attend a group session or guided retreat for deeper practice"
+    },
+    {
+      "id": "33a21a32-17cc-4a21-84cf-cbfe3e824add",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Cooking with Herbs",
+      "tags": [
+        "Cooking",
+        "Culinary"
+      ],
+      "lastEdited": "2024-06-18",
+      "text": "Enhancing flavor profiles with fresh and dried herbs:\n\n1. Herb Basics\n- Know the taste profiles of basil, thyme, rosemary\n- Use fresh herbs at the end of cooking for maximum flavor\n\n2. Dry vs. Fresh\n- Use dried herbs earlier in the cooking process\n- Fresher herbs work best in cold dishes or garnishes\n\n3. Pairing Suggestions\n- Combine rosemary with roasted meats\n- Add cilantro to salsas or Asian-style dishes\n\nTODO: Try growing an herb garden to have fresh options on hand"
+    },
+    {
+      "id": "8c0185dd-16ea-4dc3-9573-c3f9fb9b65ef",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Public Speaking Tips",
+      "tags": [
+        "Skills",
+        "Communication"
+      ],
+      "lastEdited": "2024-05-27",
+      "text": "Improving stage presence and speaking confidence:\n\n1. Preparation\n- Outline key points and rehearse out loud\n- Use stories or examples to engage the audience\n\n2. Delivery Style\n- Vary tone and pace for emphasis\n- Maintain eye contact to connect with listeners\n\n3. Visual Aids\n- Use concise slides if needed\n- Avoid cluttered or text-heavy visuals\n\nTODO: Record practice sessions to analyze pacing and clarity"
+    },
+    {
+      "id": "d2efce8c-4a9d-4236-9564-8bf242e92ecd",
+      "userId": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "heading": "Time Management Hacks",
+      "tags": [
+        "Productivity",
+        "Organization"
+      ],
+      "lastEdited": "2024-05-02",
+      "text": "Maximizing daily productivity through better scheduling and focus:\n\n1. Task Prioritization\n- Identify urgent vs. important tasks to tackle first\n- Delegate or eliminate less critical items\n\n2. Blocking Distractions\n- Turn off non-essential notifications\n- Set focused work intervals for deep work\n\n3. Efficient Routines\n- Create a consistent morning ritual\n- Batch repetitive tasks to streamline effort\n\nTODO: Track daily activities for one week to find time leaks"
+    },
+    {
+      "id": "38b5ee3c-250b-44a4-bc36-6a13503bd347",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "study schedule",
+      "tags": [
+        "school",
+        "study"
+      ],
+      "lastEdited": "2025-03-03",
+      "text": "1. wake up\n2. make coffe\n3. start computer, 3.5 - start VSCode\n4. start studying 5. lunch 6. make coffe"
+    },
+    {
+      "id": "83c8d07c-bead-4523-9cbc-5627f704bf2b",
+      "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "heading": "partys",
+      "tags": [
+        "friends",
+        "social",
+        "fiesta"
+      ],
+      "lastEdited": "2025-03-06",
+      "text": "party"
+    }
+  ],
+  "users": [
+    {
+      "id": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
+      "name": "Alice Johnson",
+      "username": "alicej",
+      "password": "alicePass123",
+      "email": "alice.johnson@example.com"
+    },
+    {
+      "id": "9c0b842b-47f5-4b72-8b2a-c7bec27f7f11",
+      "name": "David Smith",
+      "username": "davids",
+      "password": "davidPass123",
+      "email": "david.smith@example.com"
+    },
+    {
+      "id": "ebb44e83-64b4-48be-bde2-4b9d3448138f",
+      "name": "Sophia Brown",
+      "username": "sophiab",
+      "password": "sophiaPass123",
+      "email": "sophia.brown@example.com"
+    }
+  ]
+}
