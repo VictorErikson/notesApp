@@ -1,5 +1,3 @@
-import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
-import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import AllNotesMobile from "../../components/allNotes/AllNotesMobile";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -22,9 +20,7 @@ const HomeTabletMobile = () => {
 
   return (
     <main className="mainHomeTablet">
-      <PageHeaderMobile />
       <AllNotesMobile />
-      <MenuBarMobile />
       {showDeletedMsg && (
         <SavedMsg
           text="Note permanently deleted."

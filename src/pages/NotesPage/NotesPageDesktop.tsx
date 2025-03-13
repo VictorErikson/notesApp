@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Notes } from "../../../public/api/types.ts";
-import PageDesktopHeader from "../../components/pageHeader/PageDesktopHeader";
-import Sidebar from "../../components/SettingsMenu/SettingsMenu";
-import AllNotesDesktop from "../../components/allNotes/AllNotesDesktop";
 import notesPage from "./_notesPage.scss";
 import Note from "../../components/Note/Note.tsx";
 import fetchData from "../../services/fetchData.tsx";
 import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
 import DesktopNoteMenu from "../../components/desktop/desktopNoteMenu/desktopNoteMenu.tsx";
+import ArchiveDeleteMenu from "../../components/desktop/ArchiveDeleteMenu/ArciveDeleteMenu.tsx";
 
 interface NoteProps {
   noteId?: string;
@@ -60,19 +58,15 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
   }
 
   return (
-    <div className="NotesPageDesktop">
-      <Sidebar />
-      <main className="NotesPageDesktop">
-        <PageDesktopHeader page={"All Notes"} />
-        <div className="notesContainer">
-          <AllNotesDesktop setNote={setNote} note={note} />
-          <div className="notes">
-            <Note setNote={setNote} note={note} />
-            <hr></hr>
-            <DesktopNoteMenu />
-          </div>
+    <div className="notesPageDesktop">
+      <div className="notes">
+        <Note setNote={setNote} note={note} />
+        <div className="noteMenuCont">
+          <hr></hr>
+          <DesktopNoteMenu />
         </div>
-      </main>
+      </div>
+      <ArchiveDeleteMenu />
     </div>
   );
 };

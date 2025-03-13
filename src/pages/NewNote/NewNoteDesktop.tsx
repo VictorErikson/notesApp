@@ -1,7 +1,4 @@
-import PageDesktopHeader from "../../components/pageHeader/PageDesktopHeader";
-import Sidebar from "../../components/SettingsMenu/SettingsMenu";
 import { Notes } from "../../../public/api/types.ts";
-import AllNotesDesktop from "../../components/allNotes/AllNotesDesktop";
 import CreateNewNote from "../../components/CreateNewNote/CreateNewNote.tsx";
 import DesktopNoteMenu from "../../components/desktop/desktopNoteMenu/DesktopNoteMenu.tsx";
 
@@ -12,19 +9,14 @@ interface NewNoteDesktopProps {
 
 const NewNoteDesktop = ({ note, setNote }: NewNoteDesktopProps) => {
   return (
-    <div className="NotesPageDesktop">
-      <Sidebar />
-      <main className="NotesPageDesktop">
-        <PageDesktopHeader page={"All Notes"} />
-        <div className="notesContainer">
-          <AllNotesDesktop />
-          <div className="notes">
-            <CreateNewNote setNote={setNote} />
-            <hr></hr>
-            <DesktopNoteMenu />
-          </div>
+    <div className="notesPageDesktop">
+      <div className="notes">
+        <CreateNewNote setNote={setNote} />
+        <div className="noteMenuCont">
+          <hr></hr>
+          <DesktopNoteMenu />
         </div>
-      </main>
+      </div>
     </div>
   );
 };

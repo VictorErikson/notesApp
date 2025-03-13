@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
-import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import Note from "../../components/Note/Note.tsx";
 import fetchData from "../../services/fetchData.tsx";
@@ -59,7 +57,6 @@ const NotesPageTabletMobile = ({ noteId, note, setNote }: NoteProps) => {
 
   return (
     <main className="mainHomeTablet">
-      <PageHeaderMobile />
       <div className="notesBackground">
         <div className="newNote">
           <NoteTopMenuMobile
@@ -73,7 +70,6 @@ const NotesPageTabletMobile = ({ noteId, note, setNote }: NoteProps) => {
           <Note setNote={setNote} note={note} />
         </div>
       </div>
-      <MenuBarMobile />
 
       {showSavedMsg && (
         <SavedMsg

@@ -1,46 +1,45 @@
 @use "../../../partials/mixins" as mixins;
 @import '../../../partials/variables';
 
-.NotesPageDesktop{
+.notesPageDesktop{
     display: flex;
-
-    .NotesPageDesktop{
+    .notes{
+        padding: 20px 24px;
         display: flex;
         flex-direction: column;
-        width: 100%;
-
-        .notes{
-            padding: 20px 24px;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: calc(100vh - 81.2px);
+        box-sizing: border-box;
+        width: 562px;
+        border-right: 1px solid $Neutral200;
+        
+        .newNote-container{
+            min-height: calc(100% - 74px);
+        }
+        .noteMenuCont{
             display: flex;
             flex-direction: column;
             gap: 16px;
-            height: calc(100vh - 81.2px);
-            box-sizing: border-box;
-            
-            .newNote-container{
-                min-height: calc(100% - 74px);
-            }
-
             hr{
                 border: none;
                 height: 1px;
                 background-color: $Neutral200;
             }
         }
-        
     }
+ 
 }
 
-body.dark{
-    .NotesPageDesktop{
-        .NotesPageDesktop{
-            .notes{
 
-                hr{
-                    background-color: $Neutral800;
-                }
+
+body.dark{
+    .notesPageDesktop{
+        .notes{
+            border-right: 1px solid $Neutral800;
+            hr{
+                background-color: $Neutral800;
             }
-            
         }
     }
 }

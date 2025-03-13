@@ -9,13 +9,14 @@
     padding-bottom: 0px;
     gap: 16px;
     border-radius: 8px 0px;
-    height: 88vh;
+    height: calc(100vh - 114px);
     box-sizing: border-box;
 
     @include mixins.tablet {
         gap: 16px;
         padding: 24px 32px;
-
+        padding-bottom: 0px;
+        height: calc(100vh - 144.41px);
          
     }
 
@@ -142,6 +143,7 @@
         height: calc(100vh - 81.19px);
         width: 290px;
         box-sizing: border-box;
+        border-radius: 0px;
 
         .create-note-desktop{
             background: $Blue500;

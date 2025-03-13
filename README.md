@@ -1,6 +1,10 @@
 # 📝 NotesApp
 
-A simple and fast note-taking app built with **React, TypeScript, and Vite**. Notes are stored in **local storage** by default, but you can enable full backend functionality with `json-server` (optional).
+A simple and fast note-taking app built with **React, TypeScript, and Vite**.
+
+### OBS Slow start-load because of server
+
+Notes are saved at an free server host, which makes it load really slow initially, so wait a minute for it to load the data, after that should it work fine.
 
 ## 🚀 Features
 
@@ -32,35 +36,6 @@ npm run dev
 ```
 
 The app should now be running at `http://localhost:5173/` (or another port if 5173 is occupied).
-
----
-
-## 🔥 Optional: Enable Full Backend Functionality
-
-If you want to **store notes in a backend instead of local storage**, you can use `json-server`.
-
-### 1️⃣ Install `json-server`
-
-```sh
-npm install -g json-server
-```
-
-### 2️⃣ Create & start the backend
-
-Go to notesApp\public\api\data and Run the following command to start a local backend that stores notes in `db.json`:
-
-```sh
-json-server --watch db.json --port 5000
-```
-
-This will start a mock backend with the following endpoints:
-
-- Notes API: `http://localhost:5000/notes`
-- Users API: `http://localhost:5000/users`
-
-### 3️⃣ Update API URL in your code
-
-Modify your API calls in the project to use `http://localhost:5000/notes` or `http://localhost:5000/users` instead of local storage.
 
 ---
 

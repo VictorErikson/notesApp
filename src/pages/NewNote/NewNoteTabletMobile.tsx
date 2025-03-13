@@ -1,6 +1,4 @@
 import { useState } from "react";
-import MenuBarMobile from "../../components/Mobile/MenuBarMobile/MenuBarMobile";
-import PageHeaderMobile from "../../components/pageHeader/PageHeaderMobile";
 import NoteTopMenuMobile from "../../components/NoteTopMenuMobile/NoteTopMenuMobile";
 import CreateNewNote from "../../components/CreateNewNote/CreateNewNote";
 import { Notes } from "../../../public/api/types.ts";
@@ -15,7 +13,6 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
 
   return (
     <main className="mainHomeTablet">
-      <PageHeaderMobile />
       <div className="notesBackground">
         <div className="newNote">
           <NoteTopMenuMobile
@@ -29,7 +26,6 @@ const NewNoteTabletMobile = ({ note, setNote }: NewNoteTabletMobileProps) => {
           <CreateNewNote setNote={setNote} />
         </div>
       </div>
-      <MenuBarMobile />
     </main>
   );
 };

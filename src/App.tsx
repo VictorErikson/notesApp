@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Users } from "../public/api/types";
 import NewNote from "./pages/NewNote/NewNote";
 import NotesPage from "./pages/NotesPage/NotesPage";
+import Layout from "./components/Layout/Layout";
 
 const App = () => {
   const [user, setUser] = useState<Users>(userData);
@@ -21,13 +22,15 @@ const App = () => {
       <UserContext.Provider value={user}>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/notes/new" element={<NewNote />} />
-            <Route path="/notes/:noteId" element={<NotesPage />} />
-            <Route path="/Search" element={<Search />} />
-            <Route path="/Archived" element={<Archived />} />
-            <Route path="/Tags" element={<Tags />} />
-            <Route path="/Settings" element={<Settings />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/notes/new" element={<NewNote />} />
+              <Route path="/notes/:noteId" element={<NotesPage />} />
+              <Route path="/Search" element={<Search />} />
+              <Route path="/Archived" element={<Archived />} />
+              <Route path="/Tags" element={<Tags />} />
+              <Route path="/Settings" element={<Settings />} />
+            </Route>
             <Route path="/Login" element={<Login />} />
           </Routes>
         </Router>
