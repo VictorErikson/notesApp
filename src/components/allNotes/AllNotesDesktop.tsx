@@ -19,8 +19,6 @@ interface NoteProps {
   setNote?: (note: Notes) => void;
 }
 
-
-
 // const AllNotesMobile = () => {
 const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   const [notes, setNotes] = useState<Notes[]>([]);
@@ -34,7 +32,9 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   useEffect(() => {
     const loadNotes = async () => {
       try {
-        const data = await fetchData<Notes[]>("http://localhost:5000/notes");
+        const data = await fetchData<Notes[]>(
+          "https://notesdb-a0dv.onrender.com/notes"
+        );
         const userNotes = data.filter((note) => note.userId === user.id);
         setNotes(userNotes);
       } catch (err) {
@@ -90,7 +90,9 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
         </button>
         <div className="notes-container">
           {notes.length > 0 ? (
-            notes.map((note) => <NoteCard key={note.id} note={note} setNote={setNote}/>)
+            notes.map((note) => (
+              <NoteCard key={note.id} note={note} setNote={setNote} />
+            ))
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
@@ -106,8 +108,11 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   );
 };
 
-const NoteCard: React.FC<{ note: Notes, setNote: (note: Notes) => void;}> = ({ note, setNote }) => {
-const navigate = useNavigate();
+const NoteCard: React.FC<{ note: Notes; setNote: (note: Notes) => void }> = ({
+  note,
+  setNote,
+}) => {
+  const navigate = useNavigate();
 
   return (
     <>
@@ -116,7 +121,7 @@ const navigate = useNavigate();
         onClick={() => {
           if (setNote) {
             setNote(note);
-          } 
+          }
           navigate(`/notes/${note.id}`);
         }}
       >

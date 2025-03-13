@@ -90,7 +90,7 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
   const deleteNote = async () => {
     try {
       const noteDeleted = await fetch(
-        `http://localhost:5000/notes/${note.id}`,
+        `https://notesdb-a0dv.onrender.com/notes/${note.id}`,
         {
           method: "DELETE",
         }
@@ -121,7 +121,7 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
     };
   }, [showDeleteMsg]);
 
-  let unchangedNote:Notes
+  let unchangedNote: Notes;
 
   return (
     <>
@@ -152,9 +152,10 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
         <button
           className="back-button"
           onClick={async () => {
-            
-            if (!create){
-              unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+            if (!create) {
+              unchangedNote = await fetchData<Notes>(
+                "https://notesdb-a0dv.onrender.com/notes/" + note.id
+              );
             } else {
               unchangedNote = {
                 heading: "",
@@ -251,8 +252,10 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           <button
             className="cancel"
             onClick={async () => {
-              if (!create){
-                unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+              if (!create) {
+                unchangedNote = await fetchData<Notes>(
+                  "https://notesdb-a0dv.onrender.com/notes/" + note.id
+                );
               } else {
                 unchangedNote = {
                   heading: "",
@@ -304,8 +307,10 @@ const NoteTopMenuMobile: React.FC<NoteTopMenuMobileProps> = ({
           <button
             className="save"
             onClick={async () => {
-              if (!create){
-                unchangedNote = await fetchData<Notes>("http://localhost:5000/notes/" + note.id);
+              if (!create) {
+                unchangedNote = await fetchData<Notes>(
+                  "https://notesdb-a0dv.onrender.com/notes/" + note.id
+                );
               } else {
                 unchangedNote = {
                   heading: "",

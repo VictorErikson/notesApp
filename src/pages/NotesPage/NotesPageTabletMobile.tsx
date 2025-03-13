@@ -25,7 +25,7 @@ const NotesPageTabletMobile = ({ noteId, note, setNote }: NoteProps) => {
     const loadNote = async () => {
       try {
         const fetchedNote = await fetchData<Notes>(
-          `http://localhost:5000/notes/${noteId}`
+          `https://notesdb-a0dv.onrender.com/notes/${noteId}`
         );
         setNote(fetchedNote);
       } catch (error) {
@@ -115,7 +115,7 @@ export default NotesPageTabletMobile;
 //     const loadNote = async () => {
 //       try {
 //         const fetchedNote = await fetchData<Notes>(
-//           `http://localhost:5000/notes/${noteId}`
+//           `https://notesdb-a0dv.onrender.com/notes/${noteId}`
 //         );
 //         setNote(fetchedNote);
 //       } catch (error) {

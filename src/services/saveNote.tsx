@@ -26,11 +26,14 @@ export const saveNote = async (note: Notes) => {
   };
 
   try {
-    const response = await fetch("http://localhost:5000/notes/" + note.id, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedNote),
-    });
+    const response = await fetch(
+      "https://notesdb-a0dv.onrender.com/notes/" + note.id,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedNote),
+      }
+    );
 
     if (response.ok) {
       console.log("Note saved successfully!");
@@ -76,7 +79,7 @@ export const saveNoteFirstTime = async (
   };
 
   try {
-    const response = await fetch("http://localhost:5000/notes", {
+    const response = await fetch("https://notesdb-a0dv.onrender.com/notes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newNote),

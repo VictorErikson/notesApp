@@ -3,8 +3,8 @@
 -wrong color on the date-text at notes in edit daymode
 -wrong color on tags in note, edit, darkmode
 
--fix so "loading content" doesnt blink by when screen-width changes 
-        (set the allnotes/sidebar/heading elements outside so they dont reload when traveling between startpage and new/exisitng note page?)
+-fix so "loading content" doesnt blink by when screen-width changes
+(set the allnotes/sidebar/heading elements outside so they dont reload when traveling between startpage and new/exisitng note page?)
 
 -fix so components that doesnt change are outside route so they dont have to re-render?
 

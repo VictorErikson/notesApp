@@ -27,7 +27,7 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
     const loadNote = async () => {
       try {
         const fetchedNote = await fetchData<Notes>(
-          `http://localhost:5000/notes/${noteId}`
+          `https://notesdb-a0dv.onrender.com/notes/${noteId}`
         );
         setNote(fetchedNote);
       } catch (error) {
@@ -69,7 +69,7 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
           <div className="notes">
             <Note setNote={setNote} note={note} />
             <hr></hr>
-            <DesktopNoteMenu/>
+            <DesktopNoteMenu />
           </div>
         </div>
       </main>
