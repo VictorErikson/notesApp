@@ -5,6 +5,7 @@ import { Notes } from "../../../public/api/types.ts";
 import { UserContext } from "../../context/AuthContext.tsx";
 import IconPlus from "../Images/icon-plus.tsx";
 import { useNavigate } from "react-router-dom";
+import LoadingMsg from "../LoadingMsg/LoadingMsg.tsx";
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -77,7 +78,13 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
     });
   }, [notes]);
 
-  if (loading) return <p>Loading users...</p>;
+  if (loading)
+    return (
+      <LoadingMsg
+        msg={"Loading notes. This may take a minute."}
+        loadingSymbol={true}
+      />
+    );
   if (error) return <p>{error}</p>;
 
   return (

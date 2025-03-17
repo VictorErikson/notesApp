@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Notes } from "../../../public/api/types.ts";
-import notesPage from "./_notesPage.scss";
 import Note from "../../components/Note/Note.tsx";
 import fetchData from "../../services/fetchData.tsx";
-import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
 import DesktopNoteMenu from "../../components/desktop/desktopNoteMenu/desktopNoteMenu.tsx";
 import ArchiveDeleteMenu from "../../components/desktop/ArchiveDeleteMenu/ArciveDeleteMenu.tsx";
+import LoadingMsg from "../../components/LoadingMsg/LoadingMsg.tsx";
 
 interface NoteProps {
   noteId?: string;
@@ -50,11 +49,16 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
   }, [location.state, location.pathname, navigate]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <LoadingMsg
+        msg={"Loading your note. Hang tight, this may take a little while."}
+        loadingSymbol={true}
+      />
+    );
   }
 
   if (!note) {
-    return <div>Error: Note not found</div>;
+    return <LoadingMsg msg={"Error: Note not found"} loadingSymbol={false} />;
   }
 
   return (

@@ -3,6 +3,8 @@
 -wrong color on the date-text at notes in edit daymode
 -wrong color on tags in note, edit, darkmode
 
+-fix so the "open"-note is maked on the menu in desktop
+
 -fix so "loading content" doesnt blink by when screen-width changes
 (set the allnotes/sidebar/heading elements outside so they dont reload when traveling between startpage and new/exisitng note page?)
 
@@ -20,7 +22,7 @@
 
 \*fix saveNote function in services
 
-\*allnotes-page if the list is long enought do the list get cut off at the bottom
+<!-- \*allnotes-page if the list is long enought do the list get cut off at the bottom -->
 
 \*Sanitizy input from dangerouslySetInnetHTML in Note.tsx:
 How to Use It Safely

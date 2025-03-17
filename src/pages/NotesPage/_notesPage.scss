@@ -11,7 +11,7 @@
         gap: 16px;
         min-height: calc(100vh - 81.2px);
         box-sizing: border-box;
-        width: 562px;
+        max-width: 562px;
         border-right: 1px solid $Neutral200;
         
         .newNote-container{

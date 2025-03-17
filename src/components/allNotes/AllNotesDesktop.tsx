@@ -1,9 +1,10 @@
 import "./_AllNotes.scss";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
 import { UserContext } from "../../context/AuthContext.tsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import LoadingMsg from "../LoadingMsg/LoadingMsg.tsx";
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -25,8 +26,8 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const user = useContext(UserContext);
+  const { noteId } = useParams();
 
-  //navigate
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,33 +51,58 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   useEffect(() => {
     const buttons = document.querySelectorAll<HTMLButtonElement>(".note-card");
 
+    const handleMouseEnter = (event: Event) => {
+      const hoveredButton = event.currentTarget as HTMLButtonElement;
+      const hr = hoveredButton.previousElementSibling as HTMLElement | null;
+
+      if (!hr || hr.tagName.toLowerCase() !== "hr") return;
+
+      const noteBefore = hr.previousElementSibling as HTMLElement | null;
+      if (noteBefore?.classList.contains("selected-note")) {
+        return;
+      }
+
+      hr.style.visibility = "hidden";
+    };
+
+    const handleMouseLeave = (event: Event) => {
+      const hoveredButton = event.currentTarget as HTMLButtonElement;
+
+      if (hoveredButton.classList.contains("selected-note")) {
+        return;
+      }
+
+      const hr = hoveredButton.previousElementSibling as HTMLElement | null;
+      if (!hr || hr.tagName.toLowerCase() !== "hr") return;
+
+      const noteBefore = hr.previousElementSibling as HTMLElement | null;
+      if (noteBefore?.classList.contains("selected-note")) {
+        return;
+      }
+
+      hr.style.visibility = "visible";
+    };
+
     buttons.forEach((button) => {
-      const handleMouseEnter = () => {
-        const prevHr = button.previousElementSibling as HTMLElement | null;
-        if (prevHr && prevHr.tagName.toLowerCase() === "hr") {
-          prevHr.style.visibility = "hidden";
-        }
-      };
-
-      const handleMouseLeave = () => {
-        const prevHr = button.previousElementSibling as HTMLElement | null;
-        if (prevHr && prevHr.tagName.toLowerCase() === "hr") {
-          prevHr.style.visibility = "visible";
-        }
-      };
-
       button.addEventListener("mouseenter", handleMouseEnter);
       button.addEventListener("mouseleave", handleMouseLeave);
+    });
 
-      // Cleanup function to remove event listeners when component unmounts
-      return () => {
+    return () => {
+      buttons.forEach((button) => {
         button.removeEventListener("mouseenter", handleMouseEnter);
         button.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    });
+      });
+    };
   }, [notes]);
 
-  if (loading) return <p>Loading users...</p>;
+  if (loading)
+    return (
+      <LoadingMsg
+        msg={"Loading your notes. Hang tight, this may take a little while."}
+        loadingSymbol={true}
+      />
+    );
   if (error) return <p>{error}</p>;
 
   return (
@@ -90,9 +116,18 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
         </button>
         <div className="notes-container">
           {notes.length > 0 ? (
-            notes.map((note) => (
-              <NoteCard key={note.id} note={note} setNote={setNote} />
-            ))
+            notes.map((note) => {
+              console.log(noteId, note.id);
+              const isSelected = noteId === note.id;
+              return (
+                <NoteCard
+                  key={note.id}
+                  note={note}
+                  setNote={setNote}
+                  isSelected={isSelected}
+                />
+              );
+            })
           ) : (
             <div className="no-notes-container">
               <h3 className="no-notes">
@@ -108,16 +143,41 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
   );
 };
 
-const NoteCard: React.FC<{ note: Notes; setNote: (note: Notes) => void }> = ({
-  note,
-  setNote,
-}) => {
+const NoteCard: React.FC<{
+  note: Notes;
+  setNote?: (note: Notes) => void;
+  isSelected: boolean;
+}> = ({ note, setNote, isSelected }) => {
   const navigate = useNavigate();
+  const noteRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (isSelected && noteRef.current) {
+      const button = noteRef.current;
+
+      const prevHr = button.previousElementSibling as HTMLElement | null;
+      if (prevHr && prevHr.tagName.toLowerCase() === "hr") {
+        prevHr.style.visibility = "hidden";
+      }
+
+      // Hide the next <hr>
+      const nextHr = button.nextElementSibling as HTMLElement | null;
+      if (nextHr && nextHr.tagName.toLowerCase() === "hr") {
+        nextHr.style.visibility = "hidden";
+      }
+
+      return () => {
+        if (prevHr) prevHr.style.visibility = "visible";
+        if (nextHr) nextHr.style.visibility = "visible";
+      };
+    }
+  }, [isSelected]);
 
   return (
     <>
       <button
-        className="note-card"
+        ref={noteRef}
+        className={`note-card ${isSelected ? "selected-note" : ""}`}
         onClick={() => {
           if (setNote) {
             setNote(note);

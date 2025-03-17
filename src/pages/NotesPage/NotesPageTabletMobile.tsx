@@ -5,6 +5,7 @@ import Note from "../../components/Note/Note.tsx";
 import fetchData from "../../services/fetchData.tsx";
 import { Notes } from "../../../public/api/types.ts";
 import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
+import LoadingMsg from "../../components/LoadingMsg/LoadingMsg.tsx";
 
 interface NoteProps {
   noteId?: string;
@@ -48,11 +49,16 @@ const NotesPageTabletMobile = ({ noteId, note, setNote }: NoteProps) => {
   }, [location.state, location.pathname, navigate]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <LoadingMsg
+        msg={"Loading note. This may take a minute."}
+        loadingSymbol={true}
+      />
+    );
   }
 
   if (!note) {
-    return <div>Error: Note not found</div>;
+    return <LoadingMsg msg={"Error: Note not found"} loadingSymbol={false} />;
   }
 
   return (

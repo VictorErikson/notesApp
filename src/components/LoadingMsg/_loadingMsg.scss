@@ -1,0 +1,52 @@
+@use "../../../partials/mixins" as mixins;
+@import '../../../partials/variables';
+
+//loading
+.loadContainer{
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    
+
+    .loadingSym{
+        border: 5px solid $Neutral100; 
+        border-top: 5px solid $Blue500; 
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        animation: spin 2s linear infinite;
+
+        @include mixins.tablet{
+           
+        }
+    }
+
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    .loading{
+        @include mixins.text-preset3;
+        
+        
+    }
+
+    @include mixins.tablet{
+        min-width: 730px;
+
+        .loadingSym{
+            border: 8px solid $Neutral100; 
+            border-top: 8px solid $Blue500; 
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        .loading{
+            @include mixins.text-preset1;
+        }
+    }
+
+    
+}
