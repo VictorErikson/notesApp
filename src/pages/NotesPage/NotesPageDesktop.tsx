@@ -6,6 +6,7 @@ import fetchData from "../../services/fetchData.tsx";
 import DesktopNoteMenu from "../../components/desktop/desktopNoteMenu/desktopNoteMenu.tsx";
 import ArchiveDeleteMenu from "../../components/desktop/ArchiveDeleteMenu/ArciveDeleteMenu.tsx";
 import LoadingMsg from "../../components/LoadingMsg/LoadingMsg.tsx";
+import SavedMsg from "../../components/SavedMsg/SavedMsg.tsx";
 
 interface NoteProps {
   noteId?: string;
@@ -67,9 +68,19 @@ const NotesPageDesktop = ({ noteId, note, setNote }: NoteProps) => {
         <Note setNote={setNote} note={note} />
         <div className="noteMenuCont">
           <hr></hr>
-          <DesktopNoteMenu />
+          <DesktopNoteMenu
+            note={note}
+            create={false}
+            setShowSavedMsg={setShowSavedMsg}
+          />
         </div>
       </div>
+      {showSavedMsg && (
+        <SavedMsg
+          text="Note saved successfully!"
+          onClose={() => setShowSavedMsg(false)}
+        />
+      )}
       <ArchiveDeleteMenu />
     </div>
   );

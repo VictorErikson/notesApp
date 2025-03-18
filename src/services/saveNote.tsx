@@ -4,11 +4,8 @@ import { Notes } from "../../public/api/types.ts";
 //Fix this alert
 export const saveNote = async (note: Notes) => {
   if (
-    // !note.tags.join(", ").trim() ||
     !note.tags.join(", ").trim() ||
     !note.text.trim() ||
-    // note.tags.join(", ") ===
-    //   "Add tags separated by commas (e.g. Work, Planning)"
     note.tags.includes("Add tags separated by commas (e.g. Work") ||
     note.text === "Start typing your note here..."
   ) {

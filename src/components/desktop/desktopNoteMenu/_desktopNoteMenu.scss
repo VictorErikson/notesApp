@@ -9,6 +9,8 @@
         padding: 12px 16px;
         border-radius: 8px;
         cursor: pointer;
+        transition: color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
     }
 
     .save{
@@ -19,16 +21,28 @@
     .cancel{
         color: $Neutral600;
         background: $Neutral100;
+
+        &:hover{
+            background: $Red500;
+            color: $BaseWhite;
+        }
     }
 }
 
 body.dark {
     .desktopNoteMenu{
 
+        .save:hover{
+            background: $Green500;
+        }
 
         .cancel{
             color: $Neutral400;
             background: $Neutral800;
+            &:hover{
+                background: $Red500;
+                color: $BaseWhite;
+            }
         }
     }
     

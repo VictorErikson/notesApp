@@ -117,7 +117,6 @@ const AllNotesMobile: React.FC<NoteProps> = ({ note, setNote }) => {
         <div className="notes-container">
           {notes.length > 0 ? (
             notes.map((note) => {
-              console.log(noteId, note.id);
               const isSelected = noteId === note.id;
               return (
                 <NoteCard

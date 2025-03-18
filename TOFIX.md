@@ -4,6 +4,7 @@
 -wrong color on tags in note, edit, darkmode
 
 -fix so the "open"-note is maked on the menu in desktop
+-a better loading-menu
 
 -fix so "loading content" doesnt blink by when screen-width changes
 (set the allnotes/sidebar/heading elements outside so they dont reload when traveling between startpage and new/exisitng note page?)
